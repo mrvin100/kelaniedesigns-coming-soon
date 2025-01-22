@@ -27,7 +27,7 @@ export default function Home() {
           <li>
             Unleash Your Bold with{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              kelaniedesign.com
+              kelaniedesigns.com
             </code>
           </li>
         </ol>
@@ -70,7 +70,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <Mails className="h-4 w-4" />
-          contact@kelaniedesign.com →
+          contact@kelaniedesigns.com →
         </a>
         <p className="text-xs">
           Our site is currently under construction and we are working hard to
