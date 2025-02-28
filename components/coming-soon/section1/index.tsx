@@ -6,6 +6,7 @@ import Button from "../ui/button";
 import { cn } from "@/lib/utils";
 import HeadingBar from "../ui/heading-bar";
 import SendButton from "../ui/send-button";
+import Logo from "../ui/logo";
 
 const SectionOneTwo = () => {
   return (
@@ -25,7 +26,7 @@ export default SectionOneTwo;
 const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
-      <HeaderLogo />
+      <Logo className={styles.header_logo} />
       <Button className={styles.join_us_btn} />
       <HeaderVideo />
       <LeftTitle />
@@ -33,18 +34,6 @@ const Section1 = () => {
       <VerticalText />
       <Section2Description />
     </section>
-  );
-};
-
-const HeaderLogo = () => {
-  return (
-    <Image
-      src={"/header_logo_kelanie.svg"}
-      alt="kelanie logo"
-      width={100}
-      height={100}
-      className={styles.header_logo}
-    />
   );
 };
 const HeaderVideo = () => {
