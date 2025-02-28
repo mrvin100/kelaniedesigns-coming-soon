@@ -91,7 +91,7 @@ const VerticalText = () => {
   return (
     <div className={styles.vertical_text_container}>
       <span className={styles.vertical_text}>DISCOVER</span>
-      <HeadingBar className={styles.vertical_text_bar} />
+      <HeadingBar className={styles.vertical_text_bar} svgWidth="26.6rem" />
     </div>
   );
 };
@@ -124,7 +124,7 @@ const SquareImage2 = () => {
 const Section2Title = () => {
   return (
     <div className={styles.section2_title_container}>
-      <HeadingBar className="absolute -top-4 left-[30%] -translate-x-[50%] inline-block" />
+      <HeadingBar className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block" svgWidth="17.9375rem" />
       <h2 className={cn(styles.section1_title, styles.section2_title)}>
         A VISION <br /> OF ART
       </h2>

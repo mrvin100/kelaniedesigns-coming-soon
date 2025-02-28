@@ -1,6 +1,6 @@
 .section_one_two {
-  width: 91.0625rem;
-  height: 141.5625rem;
+  max-width: 90rem;
+  height: 135.5625rem;
   background: linear-gradient(
       111deg,
       rgba(50, 50, 50, 0) 42.32%,
@@ -14,7 +14,6 @@
   margin: 0 auto;
   max-width: 85.375rem;
   height: 78.5625rem;
-  /* border: 1px solid white; */
 }
 
 .header_logo {
@@ -103,7 +102,6 @@
 
 .vertical_text_bar {
   display: block;
-  height: 26.6rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -113,7 +111,6 @@
 .section2 {
   height: 80.1875rem;
   max-width: 64.125rem;
-  /* border: 1px solid white; */
   margin: 0 auto;
 }
 
@@ -135,7 +132,7 @@
   position: absolute;
   top: 98.81rem;
   left: 22.41rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .square_image2 {
@@ -144,8 +141,9 @@
   background: url("/section2_square_image2.png") lightgray -21.653px -105.275px /
     194.668% 157.861% no-repeat;
   position: absolute;
-  top: 117.75rem;
+  bottom: -6rem;
   left: 11.63rem;
+  z-index: 1;
 }
 .section2_title_container {
   position: absolute;
