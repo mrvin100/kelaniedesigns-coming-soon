@@ -21,7 +21,7 @@ const Section5 = () => {
       <Section5Description2 />
       <Section5Subtitle3 />
       <Section5Description3 />
-      <Button className={styles.section5_btn} text="READ MORE" />
+      <Button className={"absolute bottom-[15.59rem] left-[39.81rem]"} text="READ MORE" />
     </section>
   );
 };

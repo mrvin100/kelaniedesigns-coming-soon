@@ -5,18 +5,9 @@
   position: relative;
 }
 
-.circle_button {
-  width: 6.25rem;
-  height: 6.25rem;
-  position: absolute;
-  left: 24.81rem;
-  bottom: 4.31rem;
-}
-
 .section3_description {
   width: 25.625rem;
   height: 10.9375rem;
-  
   color: #ff3e24;
   font-family: var(--font-roboto-mono);
   font-size: 1.125rem;

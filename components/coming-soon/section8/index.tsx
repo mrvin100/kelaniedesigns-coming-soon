@@ -1,10 +1,11 @@
 "use client";
 import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
-import SendButton from "../ui/send-button";
 import Logo from "../ui/logo";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../ui/button";
+import Input from "../ui/input";
 
 const Section8 = () => {
   return (
@@ -21,9 +22,10 @@ const Section8 = () => {
       <Section8Description1 />
       <Section8Subtitle2 />
       <Section8Description2 />
-      <SubscriptionInput />
-      <SendButton
+      <Input className={styles.subscription_input} placeholder="EMAIL ADRESS" variant="newsletter" />
+      <Button
         className={"absolute left-[50%] translate-x-[-50%] bottom-[23.5rem]"}
+        variant="rounded"
       />
       <Footer />
     </section>
@@ -78,14 +80,6 @@ const Section8Description2 = () => {
     >
       Add yourself to our newsletter to be part of our mission.
     </p>
-  );
-};
-
-const SubscriptionInput = () => {
-  return (
-    <div className={styles.subscription_input_container}>
-      <input className={styles.subscription_input} placeholder="EMAIL ADRESS" />
-    </div>
   );
 };
 

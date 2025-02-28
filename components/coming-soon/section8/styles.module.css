@@ -99,19 +99,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 30.44rem;
-
   width: 43.875rem;
-  height: 3.75rem;
-  border-radius: 12.5rem;
-  border: 1px solid #ffb1a6;
-  background: rgba(255, 168, 156, 0.2);
-  color: rgba(255, 192, 184, 0.8);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.125rem; /* 112.5% */
-  letter-spacing: 0.2rem;
-  padding: 1.37rem;
 }
 
 .footer {

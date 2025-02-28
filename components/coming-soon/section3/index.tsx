@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 const Section3 = () => {
   return (
     <section className={styles.section3}>
-      <Button className={styles.circle_button} text="READ MORE" />
+      <Button className={"absolute left-[24.81rem] bottom-[4.31rem]"} text="READ MORE" />
       <Section3Description />
       <Section3Title />
     </section>

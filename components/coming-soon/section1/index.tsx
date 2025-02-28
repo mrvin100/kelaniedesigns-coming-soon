@@ -5,8 +5,8 @@ import styles from "./styles.module.css";
 import Button from "../ui/button";
 import { cn } from "@/lib/utils";
 import HeadingBar from "../ui/heading-bar";
-import SendButton from "../ui/send-button";
 import Logo from "../ui/logo";
+import Input from "../ui/input";
 
 const SectionOneTwo = () => {
   return (
@@ -27,7 +27,7 @@ const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
       <Logo className={styles.header_logo} />
-      <Button className={styles.join_us_btn} />
+      <Button className={"absolute right-[3.8rem] top-[3.8rem]"} />
       <HeaderVideo />
       <LeftTitle />
       <RightTitle />
@@ -92,8 +92,11 @@ const Section2 = () => {
       <RoundedImage1 />
       <SquareImage2 />
       <Section2Title />
-      <SendButton className={"absolute right-[25.69rem] bottom-[11.88rem]"} />
-      <SubscriptionInput />
+      <Button
+        className={"absolute right-[25.69rem] bottom-[11.88rem]"}
+        variant="rounded"
+      />
+      <Input className={styles.subscription_input} placeholder="EMAIL ADRESS" variant="newsletter" />
     </section>
   );
 };
@@ -113,7 +116,10 @@ const SquareImage2 = () => {
 const Section2Title = () => {
   return (
     <div className={styles.section2_title_container}>
-      <HeadingBar className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block" svgWidth="17.9375rem" />
+      <HeadingBar
+        className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block"
+        svgWidth="17.9375rem"
+      />
       <h2 className={cn(styles.section1_title, styles.section2_title)}>
         A VISION <br /> OF ART
       </h2>
@@ -129,13 +135,5 @@ const Section2Description = () => {
       creating high-quality, one-of-a-kind jewelry, all lifestyle vision, a
       creative force. Be part and add yourself to our newsletter.
     </p>
-  );
-};
-
-const SubscriptionInput = () => {
-  return (
-    <div className={styles.subscription_input_container}>
-        <input className={styles.subscription_input} placeholder="EMAIL ADRESS" />
-    </div>
   );
 };
