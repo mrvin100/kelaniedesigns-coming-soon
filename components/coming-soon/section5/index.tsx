@@ -32,11 +32,11 @@ const Quote = () => {
     <div className={styles.quote_container}>
       <blockquote className={styles.quote}>
         <p>
-          <span className={styles.quote_decoration}>.</span>{" "}
+          <span className={styles.quote_decoration}>.</span>
           <span className={styles.quote_text}>For the Visionaries,</span>
         </p>
         <p>
-          <span className={styles.quote_decoration}>.</span>{" "}
+          <span className={styles.quote_decoration}>.</span>
           <span className={styles.quote_text}>the Creators,</span>
         </p>
         <p>

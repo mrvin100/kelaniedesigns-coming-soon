@@ -21,9 +21,9 @@
 .quote {
   height: 6rem;
   width: 72.125rem;
-  flex-shrink: 0;
+  
   font-family: var(--font-fraunces);
-  font-size: 6.25rem;
+  font-size: 6rem;
   font-style: normal;
   font-weight: 300;
   line-height: 5.3125rem;
@@ -42,7 +42,7 @@
 .rounded_image {
   width: 30.0625rem;
   height: 39.6875rem;
-  flex-shrink: 0;
+  
   border-radius: 37.5rem 37.5rem 0rem 0rem;
   background: url("/section5_rounded_image1.png") lightgray 50% / cover
     no-repeat;
@@ -54,7 +54,7 @@
 .square_image1 {
   width: 26.9375rem;
   height: 29.9375rem;
-  flex-shrink: 0;
+  
   background: url("/section5_square_image1.png") lightgray 50% / cover no-repeat;
   position: absolute;
   left: 19.94rem;
@@ -64,7 +64,7 @@
 .square_image2 {
   width: 11.125rem;
   height: 17.3125rem;
-  flex-shrink: 0;
+  
   background: url("/section5_square_image2.png") lightgray 50% / cover no-repeat;
   position: absolute;
   left: 14.56rem;
@@ -73,7 +73,7 @@
 .square_image3 {
   width: 27.5625rem;
   height: 28.125rem;
-  flex-shrink: 0;
+  
   background: url("/section5_square_image3.png") lightgray 50% / cover no-repeat;
   position: absolute;
   right: 21.31rem;

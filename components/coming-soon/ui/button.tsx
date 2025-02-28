@@ -8,7 +8,7 @@ const StyledButtonContainer = styled.div`
   padding: 0.6875rem 0.625rem 0.625rem 0.6875rem;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+  
   color: #ff3e24;
 `;
 const StyledButton = styled.button`

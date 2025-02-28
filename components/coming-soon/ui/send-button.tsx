@@ -8,7 +8,7 @@ const StyledSendButtonContainer = styled.div`
   padding: 0.5rem 0.6875rem;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+  
 `;
 const StyledSendButton = styled.button`
   display: flex;
@@ -18,7 +18,7 @@ const StyledSendButton = styled.button`
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  flex-shrink: 0;
+  
   border-radius: 6.25rem;
   border: 1.5px solid #ff3e24;
 `;

@@ -16,7 +16,7 @@
 .section3_description {
   width: 25.625rem;
   height: 10.9375rem;
-  flex-shrink: 0;
+  
   color: #ff3e24;
   font-family: var(--font-roboto-mono);
   font-size: 1.125rem;

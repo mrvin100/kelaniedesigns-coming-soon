@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,7 +32,10 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.0rem;
+    --radius: 0rem;
+    --font-fraunces: Fraunces, sans-serif;
+    --font-monsterrat: Montserrat, sans-serif;
+    --font-roboto_mono: Roboto_Mono, sans-serif;
   }
   .dark {
     --background: 0 0% 3.9%;

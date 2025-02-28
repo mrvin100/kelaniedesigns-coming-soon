@@ -58,7 +58,7 @@
 .left_title {
   width: 40.5625rem;
   height: 13.1875rem;
-  flex-shrink: 0;
+
   position: absolute;
   left: 3.3rem;
   top: 24.75rem;
@@ -74,7 +74,7 @@
 .right_title {
   width: 40.5625rem;
   height: 13.1875rem;
-  flex-shrink: 0;
+
   text-align: right;
   position: absolute;
   right: 4.37rem;
@@ -117,7 +117,7 @@
 .square_image1 {
   width: 27.875rem;
   height: 41.5625rem;
-  flex-shrink: 0;
+
   background: url("/section2_square_image1.png") lightgray 50% / cover no-repeat;
   position: absolute;
   top: 61.38rem;
@@ -166,7 +166,7 @@
 
   width: 27.375rem;
   height: 18.0625rem;
-  flex-shrink: 0;
+
   color: #ffb1a6;
   font-family: var(--font-roboto_mono);
   font-size: 1.125rem;
@@ -182,7 +182,7 @@
   width: 24.5625rem;
 
   height: 3.75rem;
-  flex-shrink: 0;
+
   border-radius: 12.5rem;
   border: 1px solid #ffb1a6;
   background: rgba(255, 168, 156, 0.2);
