@@ -2,7 +2,6 @@
 import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
 import { TeamMember, section5Data } from "./section5.types";
-import { HeadingBar } from "../ui";
 import { memo } from "react";
 
 interface Section5CardProps extends TeamMember {
@@ -42,29 +41,28 @@ const Section5Cards = memo(() => {
 
 const Section5Title = memo(() => {
   return (
-    <h2 className={styles.section5_title}>
-      {section5Data.title}{" "}
-      <HeadingBar
-        svgWidth="8.3125rem"
-        className="absolute right-[2rem] top-[6.94rem]"
-      />
-    </h2>
-  );
-});
-
-const Section5Description = memo(() => {
-  return (
-    <p className={styles.section5_description}>
-      {section5Data.description}
-    </p>
+    <div className={styles.section5_header}>
+      <h2 className={styles.section5_title}>
+        {section5Data.title}
+      </h2>
+      <p className={styles.section5_description}>
+        {section5Data.description}
+      </p>
+    </div>
   );
 });
 
 const Section5 = () => {
   return (
     <section className={cn(styles.section5)}>
-      <Section5Title />
-      <Section5Description />
+      <div className={styles.section5_content}>
+        <h2 className={styles.section5_title}>
+          {section5Data.title}
+        </h2>
+        <p className={styles.section5_description}>
+          {section5Data.description}
+        </p>
+      </div>
       <Section5Cards />
     </section>
   );
@@ -73,6 +71,5 @@ const Section5 = () => {
 Section5Card.displayName = "Section5Card";
 Section5Cards.displayName = "Section5Cards";
 Section5Title.displayName = "Section5Title";
-Section5Description.displayName = "Section5Description";
 
 export default Section5;
