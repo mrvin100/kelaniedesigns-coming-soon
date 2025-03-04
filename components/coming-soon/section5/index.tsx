@@ -27,7 +27,7 @@ const Section5Cards = memo(() => {
   return (
     <div
       className={cn(
-        "grid grid-cols-3 gap-x-[4.19rem] gap-y-[6rem] justify-center pt-[35rem] mx-auto",
+        "grid grid-cols-3 gap-x-[4.19rem] gap-y-[6rem] justify-center mx-auto",
         styles.section5_cards,
         "[&>*:last-child]:col-span-3 [&>*:last-child]:mx-auto"
       )}
@@ -35,19 +35,6 @@ const Section5Cards = memo(() => {
       {section5Data.teamMembers.map((member) => (
         <Section5Card key={member.id} {...member} />
       ))}
-    </div>
-  );
-});
-
-const Section5Title = memo(() => {
-  return (
-    <div className={styles.section5_header}>
-      <h2 className={styles.section5_title}>
-        {section5Data.title}
-      </h2>
-      <p className={styles.section5_description}>
-        {section5Data.description}
-      </p>
     </div>
   );
 });
@@ -70,6 +57,5 @@ const Section5 = () => {
 
 Section5Card.displayName = "Section5Card";
 Section5Cards.displayName = "Section5Cards";
-Section5Title.displayName = "Section5Title";
 
 export default Section5;
