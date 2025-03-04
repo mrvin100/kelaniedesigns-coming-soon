@@ -1,6 +1,7 @@
 .section_one_two {
   max-width: 90rem;
   height: 135.5625rem;
+  margin: 0 auto;
 }
 
 .section1 {
@@ -45,17 +46,44 @@
 .left_title {
   width: 40.5625rem;
   height: 13.1875rem;
-
   position: absolute;
   left: 3.3rem;
   top: 24.75rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 5.9375rem;
 }
-.left_title_bar {
-  display: inline-block;
-  height: 2px;
+
+.left_title::before {
+  content: "";
   width: 17.9375rem;
-  margin-left: 2rem;
+  height: 2px;
   background: #ff3e24;
+  display: inline-block;
+  margin-left: 12rem;
+  position: absolute;
+  top: 3.8rem;
+  left: 1rem;
+}
+
+/* Style pour le premier mot (THE) */
+.left_title > span:first-child {
+  display: block;
+  line-height: 5.9375rem;
+  font-style: normal;
+  position: relative;
+}
+
+/* Style pour le texte en italique (OF) */
+.left_title > div > span {
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+/* Ajustement du conteneur de FUTURE OF */
+.left_title > div {
+  line-height: 5.9375rem;
+  margin-top: 0;
 }
 
 .right_title {
@@ -75,6 +103,18 @@
   rotate: -90deg;
 }
 
+.vertical_text_container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 26.6rem;
+  height: 2px;
+  background: #ff3e24;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20rem;
+}
+
 .vertical_text {
   color: #ff3e24;
   font-family: var(--font-monsterrat);
@@ -85,14 +125,6 @@
   letter-spacing: 0.3rem;
   width: 6.25rem;
   height: 1.25rem;
-}
-
-.vertical_text_bar {
-  display: block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -20rem;
 }
 
 .section2 {
@@ -140,6 +172,18 @@
   height: 10.25rem;
   text-align: center;
 }
+
+.section2_title_container::before {
+  content: "";
+  position: absolute;
+  width: 17.9375rem;
+  height: 2px;
+  background: #ff3e24;
+  top: -1rem;
+  left: 31%;
+  transform: translateX(-50%);
+}
+
 .section2_title {
   font-size: 6.25rem;
   line-height: 4.6875rem;

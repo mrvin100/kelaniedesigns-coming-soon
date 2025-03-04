@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./styles.module.css";
-import { Button, HeadingBar, Logo, Input, SectionBackground } from "../ui";
+import { Button, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
 import { sectionOneTwoData as sectionData } from "./section1.types";
 import { memo } from "react";
@@ -25,15 +24,11 @@ const HeaderVideo = memo(() => (
 
 const LeftTitle = memo(() => (
   <h1 className={cn(styles.section1_title, styles.left_title)}>
-    {sectionData.section1.title.left.text[0]}
-    <Image
-      className={styles.left_title_bar}
-      src={sectionData.section1.title.left.bar.src}
-      width={100}
-      height={100}
-      alt={sectionData.section1.title.left.bar.alt}
-    />
-    {sectionData.section1.title.left.text[1]} <span>{sectionData.section1.title.left.text[2]}</span>
+    <span>{sectionData.section1.title.left.text[0]}</span>
+    <div>
+      {sectionData.section1.title.left.text[1]}{" "}
+      <span>{sectionData.section1.title.left.text[sectionData.section1.title.left.text.length - 1]}</span>
+    </div>
   </h1>
 ));
 
@@ -46,22 +41,14 @@ const RightTitle = memo(() => (
 const VerticalText = memo(() => (
   <div className={styles.vertical_text_container}>
     <span className={styles.vertical_text}>{sectionData.section1.verticalText.text}</span>
-    <HeadingBar 
-      className={styles.vertical_text_bar} 
-      svgWidth={sectionData.section1.verticalText.barWidth} 
-    />
   </div>
 ));
 
 // Section 2 Components
 const Section2Title = memo(() => (
   <div className={styles.section2_title_container}>
-    <HeadingBar
-      className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block"
-      svgWidth={sectionData.section2.title.bar.width}
-    />
     <h2 className={cn(styles.section1_title, styles.section2_title)}>
-        {sectionData.section2.title.text[0]} <br /> {sectionData.section2.title.text[1]}
+      {sectionData.section2.title.text[0]} <br /> {sectionData.section2.title.text[1]}
     </h2>
   </div>
 ));
