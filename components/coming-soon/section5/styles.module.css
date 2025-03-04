@@ -69,6 +69,11 @@
 
 .section5_cards {
   width: 67.375rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.19rem 6rem;
+  padding-top: 35rem;
+  margin: 0 auto;
 }
 
 .section5_card {
@@ -76,6 +81,22 @@
   width: 15.37656rem;
   height: 23.625rem;
   border-radius: 12.5rem 12.5rem 0rem 0rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.section5_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  border-radius: inherit;
 }
 
 .section5_card_title {
@@ -91,4 +112,14 @@
   position: absolute;
   bottom: 5.15rem;
   right: 10.82rem;
+  z-index: 1;
+}
+
+.section5_card:hover {
+  transform: translateY(-4px);
+}
+
+.section5_cards > *:last-child {
+  grid-column: span 3;
+  margin: 0 auto;
 }

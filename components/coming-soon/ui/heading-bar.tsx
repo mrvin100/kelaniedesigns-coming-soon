@@ -10,7 +10,7 @@ const StyledBarContainer = styled.div`
 `;
 const StyledBar = styled.svg``;
 
-interface Props {
+export interface HeadingBarProps {
   className?: string;
   styledBar?: string;
   svgWidth?: string;
@@ -18,7 +18,7 @@ interface Props {
   strokeWidth?: string;
   stroke?: string;
 }
-export const HeadingBar = ({ className, styledBar, svgWidth, svgHeight, stroke, strokeWidth }: Readonly<Props>) => {
+export const HeadingBar = ({ className, styledBar, svgWidth, svgHeight, stroke, strokeWidth }: Readonly<HeadingBarProps>) => {
   return (
     <StyledBarContainer className={cn("", className)}>
       <StyledBar className={cn("", styledBar)}>
