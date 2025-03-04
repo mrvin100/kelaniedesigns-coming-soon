@@ -10,11 +10,7 @@ export interface SectionOneTwoData {
     };
     title: {
       left: {
-        text: string[];
-        bar: {
-          src: string;
-          alt: string;
-        };
+        text: string;
       };
       right: {
         text: string;
@@ -22,15 +18,11 @@ export interface SectionOneTwoData {
     };
     verticalText: {
       text: string;
-      barWidth: string;
     };
   };
   section2: {
     title: {
-      text: string[];
-      bar: {
-        width: string;
-      };
+      text: string;
     };
     description: string;
     images: {
@@ -53,11 +45,7 @@ export const sectionOneTwoData: SectionOneTwoData = {
     },
     title: {
       left: {
-        text: ["THE", "FUTURE", "OF"],
-        bar: {
-          src: "/heading_bar.svg",
-          alt: "heading bar",
-        },
+        text: "THE FUTURE OF",
       },
       right: {
         text: "BOLD ELEGANCE",
@@ -65,15 +53,11 @@ export const sectionOneTwoData: SectionOneTwoData = {
     },
     verticalText: {
       text: "DISCOVER",
-      barWidth: "26.6rem",
     },
   },
   section2: {
     title: {
-      text: ["A VISION", "OF ART"],
-      bar: {
-        width: "17.9375rem",
-      },
+      text: "A VISION OF ART",
     },
     description:
       "Kelanie aims to be a unique blend of artistry – inspired by a rich mix of cultural influences, seamlessly paired with Italian sophistication. We are creating high-quality, one-of-a-kind jewelry, all lifestyle vision, a creative force. Be part and add yourself to our newsletter.",

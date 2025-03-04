@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { sectionOneTwoData as sectionData } from "./section1.types";
 import { memo } from "react";
 
-// Section 1 Components
 const HeaderVideo = memo(() => (
   <div className={styles.header_video}>
     <video
@@ -22,15 +21,22 @@ const HeaderVideo = memo(() => (
   </div>
 ));
 
-const LeftTitle = memo(() => (
-  <h1 className={cn(styles.section1_title, styles.left_title)}>
-    <span>{sectionData.section1.title.left.text[0]}</span>
-    <div>
-      {sectionData.section1.title.left.text[1]}{" "}
-      <span>{sectionData.section1.title.left.text[sectionData.section1.title.left.text.length - 1]}</span>
-    </div>
-  </h1>
-));
+const LeftTitle = memo(() => {
+  const words = sectionData.section1.title.left.text.split(" ");
+  const firstWord = words[0];
+  const middleWords = words.slice(1, -1).join(" ");
+  const lastWord = words[words.length - 1];
+
+  return (
+    <h1 className={cn(styles.section1_title, styles.left_title)}>
+      <span>{firstWord}</span>
+      <div>
+        {middleWords}{" "}
+        <span>{lastWord}</span>
+      </div>
+    </h1>
+  );
+});
 
 const RightTitle = memo(() => (
   <h1 className={cn(styles.section1_title, styles.right_title)}>
@@ -44,14 +50,19 @@ const VerticalText = memo(() => (
   </div>
 ));
 
-// Section 2 Components
-const Section2Title = memo(() => (
-  <div className={styles.section2_title_container}>
-    <h2 className={cn(styles.section1_title, styles.section2_title)}>
-      {sectionData.section2.title.text[0]} <br /> {sectionData.section2.title.text[1]}
-    </h2>
-  </div>
-));
+const Section2Title = memo(() => {
+  const words = sectionData.section2.title.text.split(" ");
+  const firstTwoWords = words.slice(0, 2).join(" ");
+  const restOfWords = words.slice(2).join(" ");
+
+  return (
+    <div className={styles.section2_title_container}>
+      <h2 className={cn(styles.section1_title, styles.section2_title)}>
+        {firstTwoWords} <br /> {restOfWords}
+      </h2>
+    </div>
+  );
+});
 
 const Section2Description = memo(() => (
   <p className={styles.section2_description}>
@@ -67,7 +78,6 @@ const Section2Images = memo(() => (
   </>
 ));
 
-// Main Components
 const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
@@ -109,7 +119,6 @@ const SectionOneTwo = () => {
   );
 };
 
-// Add display names for debugging
 HeaderVideo.displayName = "HeaderVideo";
 LeftTitle.displayName = "LeftTitle";
 RightTitle.displayName = "RightTitle";
