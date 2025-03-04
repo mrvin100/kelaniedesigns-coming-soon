@@ -1,36 +1,42 @@
+interface Logo {
+  src: string;
+  alt: string;
+}
+
+interface Video {
+  src: string;
+  poster: string;
+}
+
+interface Title {
+  text: string;
+}
+
+interface Images {
+  square1: string;
+  rounded: string;
+  square2: string;
+}
+
+interface Section1 {
+  logo: Logo;
+  video: Video;
+  title: {
+    left: Title;
+    right: Title;
+  };
+  verticalText: Title;
+}
+
+interface Section2 {
+  title: Title;
+  description: string;
+  images: Images;
+}
+
 export interface SectionOneTwoData {
-  section1: {
-    logo: {
-      src: string;
-      alt: string;
-    };
-    video: {
-      src: string;
-      poster: string;
-    };
-    title: {
-      left: {
-        text: string;
-      };
-      right: {
-        text: string;
-      };
-    };
-    verticalText: {
-      text: string;
-    };
-  };
-  section2: {
-    title: {
-      text: string;
-    };
-    description: string;
-    images: {
-      square1: string;
-      rounded: string;
-      square2: string;
-    };
-  };
+  section1: Section1;
+  section2: Section2;
 }
 
 export const sectionOneTwoData: SectionOneTwoData = {
