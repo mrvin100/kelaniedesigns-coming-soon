@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { Button, HeadingBar, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
+import { section1Data } from "./section1.types";
 
 const SectionOneTwo = () => {
   return (
@@ -18,7 +19,11 @@ export default SectionOneTwo;
 const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
-      <Logo className={styles.header_logo} />
+      <Logo 
+        src={section1Data.logo.src}
+        alt={section1Data.logo.alt}
+        className={styles.header_logo} 
+      />
       <Button className={"absolute right-[3.8rem] top-[3.8rem]"} />
       <HeaderVideo />
       <LeftTitle />
@@ -35,10 +40,10 @@ const HeaderVideo = () => {
         className="w-full h-full object-cover"
         loop
         muted={true}
-        poster="/header_video_poster.jpg"
+        poster={section1Data.video.poster}
         autoPlay
       >
-        <source src={"/header_video.mp4"} type="video/mp4" />
+        <source src={section1Data.video.src} type="video/mp4" />
         Your browser does not support the video tag
       </video>
     </div>
@@ -48,15 +53,15 @@ const HeaderVideo = () => {
 const LeftTitle = () => {
   return (
     <h1 className={cn(styles.section1_title, styles.left_title)}>
-      THE
+      {section1Data.title.left.text[0]}
       <Image
         className={styles.left_title_bar}
-        src={"/heading_bar.svg"}
+        src={section1Data.title.left.bar.src}
         width={100}
         height={100}
-        alt="heaing bar"
+        alt={section1Data.title.left.bar.alt}
       />
-      FUTURE <span>OF</span>
+      {section1Data.title.left.text[1]} <span>{section1Data.title.left.text[2]}</span>
     </h1>
   );
 };
@@ -64,15 +69,18 @@ const LeftTitle = () => {
 const RightTitle = () => {
   return (
     <h1 className={cn(styles.section1_title, styles.right_title)}>
-      BOLD ELEGANCE
+      {section1Data.title.right.text}
     </h1>
   );
 };
 const VerticalText = () => {
   return (
     <div className={styles.vertical_text_container}>
-      <span className={styles.vertical_text}>DISCOVER</span>
-      <HeadingBar className={styles.vertical_text_bar} svgWidth="26.6rem" />
+      <span className={styles.vertical_text}>{section1Data.verticalText.text}</span>
+      <HeadingBar 
+        className={styles.vertical_text_bar} 
+        svgWidth={section1Data.verticalText.barWidth} 
+      />
     </div>
   );
 };

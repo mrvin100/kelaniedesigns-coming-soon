@@ -1,9 +1,9 @@
 // import ComingSoon from "@/components/coming-soon";
-import Section5 from "@/components/coming-soon/section5";
+import Section1 from "@/components/coming-soon/section1";
 
 export default function Home() {
   return (
     // <ComingSoon />
-    <Section5 />
+    <Section1 />
   );
 }
