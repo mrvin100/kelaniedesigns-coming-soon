@@ -1,13 +1,6 @@
 .section_one_two {
   max-width: 90rem;
   height: 135.5625rem;
-  background: linear-gradient(
-      111deg,
-      rgba(50, 50, 50, 0) 42.32%,
-      #131313 85.68%
-    ),
-    url("/hg_background.jpg") lightgray 50% / cover no-repeat;
-  background-blend-mode: normal, multiply, normal;
 }
 
 .section1 {

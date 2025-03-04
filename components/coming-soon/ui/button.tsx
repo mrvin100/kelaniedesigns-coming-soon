@@ -62,7 +62,7 @@ const ButtonText = styled.span`
   letter-spacing: 0.1875rem;
 `;
 
-const Button = ({ 
+export const Button = ({ 
   text, 
   className, 
   variant = 'circle',
@@ -84,5 +84,3 @@ const Button = ({
     </BaseButtonContainer>
   );
 };
-
-export default Button;

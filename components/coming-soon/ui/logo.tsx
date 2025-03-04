@@ -11,7 +11,7 @@ interface LogoProps {
   imageClassName?: string;
 }
 
-const Logo = ({
+export const Logo = ({
   src = "/header_logo_kelanie.svg",
   alt = "kelanie logo",
   width = 100,
@@ -31,5 +31,3 @@ const Logo = ({
     </Link>
   );
 };
-
-export default Logo;

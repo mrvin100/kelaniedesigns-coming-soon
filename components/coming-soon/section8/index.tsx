@@ -1,20 +1,13 @@
 "use client";
 import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
-import Logo from "../ui/logo";
+import { Logo, Button, Input, SectionBackground } from "../ui";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../ui/button";
-import Input from "../ui/input";
 
 const Section8 = () => {
   return (
-    <section
-      className={cn(
-        "relative bg-gradient-to-r from-[#313131] to-[#121212]",
-        styles.section8
-      )}
-    >
+    <SectionBackground className={styles.section8}>
       <SquareImage1 />
       <SquareImage2 />
       <SquareImage3 />
@@ -28,7 +21,7 @@ const Section8 = () => {
         variant="rounded"
       />
       <Footer />
-    </section>
+    </SectionBackground>
   );
 };
 
@@ -57,7 +50,7 @@ const Section8Description1 = () => {
     <p
       className={cn(styles.section8_description, styles.section8_description1)}
     >
-      We’re not just making jewelry; we’re baking up a future where art,
+      We&apos;re not just making jewelry; we&apos;re baking up a future where art,
       technology, and material innovation rise together like a perfectly puffed
       croissant - creating something entirely new, deliciously unexpected, and
       utterly irresistible.

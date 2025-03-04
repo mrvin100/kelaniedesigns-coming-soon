@@ -28,10 +28,9 @@ const StyledInput = styled.input<{ variant?: "newsletter" }>`
   `}
 `;
 
-const Input = ({ className, variant, ...props }: InputProps) => {
+export const Input = ({ className, variant, ...props }: InputProps) => {
   return (
     <StyledInput variant={variant} className={cn("", className)} {...props} />
   );
 };
 
-export default Input;

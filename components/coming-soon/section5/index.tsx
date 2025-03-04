@@ -1,115 +1,79 @@
 "use client";
 import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
-import Button from "../ui/button";
+import { HeadingBar } from "../ui";
+
 const Section5 = () => {
   return (
-    <section
-      className={cn(
-        "relative bg-gradient-to-r from-[#313131] to-[#121212]",
-        styles.section5
-      )}
-    >
-      <Quote />
-      <RoundedImage1 />
-      <SquareImage1 />
-      <SquareImage2 />
-      <SquareImage3 />
-      <Section5Subtitle1 />
-      <Section5Description1 />
-      <Section5Subtitle2 />
-      <Section5Description2 />
-      <Section5Subtitle3 />
-      <Section5Description3 />
-      <Button className={"absolute bottom-[15.59rem] left-[39.81rem]"} text="READ MORE" />
+    <section className={cn(styles.section5)}>
+      <Section5Title />
+      <Section5Description />
+      <Section5Cards />
     </section>
   );
 };
+
 export default Section5;
 
-const Quote = () => {
+const Section5Title = () => {
   return (
-    <div className={styles.quote_container}>
-      <blockquote className={styles.quote}>
-        <p>
-          <span className={styles.quote_decoration}>.</span>
-          <span className={styles.quote_text}>For the Visionaries,</span>
-        </p>
-        <p>
-          <span className={styles.quote_decoration}>.</span>
-          <span className={styles.quote_text}>the Creators,</span>
-        </p>
-        <p>
-          <span className={styles.quote_text}>THE BOLD.</span>
-        </p>
-      </blockquote>
+    <h2 className={styles.section5_title}>
+      A Family-Driven Creative Hub{" "}
+      <HeadingBar
+        svgWidth="8.3125rem"
+        className="absolute right-[2rem] top-[6.94rem]"
+      />
+    </h2>
+  );
+};
+
+const Section5Description = () => {
+  return (
+    <p className={styles.section6_description}>
+      Kelanie Designs is a design ecosystem built entirely in-house,where
+      creative freedom, innovation, and uncompromised quality go hand in hand
+      like chocolate and caramel.{" "}
+    </p>
+  );
+};
+
+const Section5Cards = () => {
+  return (
+    <div
+      className={cn(
+        "grid grid-cols-3 gap-x-[4.19rem] gap-y-[6rem] justify-center pt-[35rem] mx-auto border ",
+        styles.section5_cards,
+        "[&>*:last-child]:col-span-3 [&>*:last-child]:mx-auto"
+      )}
+    >
+      <Section5Card
+        title="Kelly (STéphanie Janette aka kelanie)"
+        image="/section5_card_bg1.jpg"
+      />
+      <Section5Card title="Linda" image="/section5_card_bg2.jpg" />
+      <Section5Card title="LUCIA" image="/section5_card_bg3.jpg" />
+      <Section5Card title="samuel" image="/section5_card_bg4.jpg" />
+      <Section5Card title="JUDE" image="/section5_card_bg5.jpg" />
+      <Section5Card title="LUCA" image="/section5_card_bg6.jpg" />
+      <Section5Card title="BATU AND HAPPY" image="/section5_card_bg7.jpg" />
     </div>
   );
 };
 
-const RoundedImage1 = () => {
-  return <div className={styles.rounded_image}></div>;
-};
-const SquareImage1 = () => {
-  return <div className={styles.square_image1}></div>;
-};
-const SquareImage2 = () => {
-  return <div className={styles.square_image2}></div>;
-};
-const SquareImage3 = () => {
-  return <div className={styles.square_image3}></div>;
-};
-
-const Section5Subtitle1 = () => {
+interface Section5CardProps {
+  title?: string;
+  image?: string;
+}
+const Section5Card = ({ title, image }: Section5CardProps) => {
   return (
-    <h3 className={cn(styles.section5_subtitle, styles.section5_subtitle1)}>
-      Creativity
-      <br /> has no <br />
-      noundaries.
-    </h3>
-  );
-};
-const Section5Subtitle2 = () => {
-  return (
-    <h3 className={cn(styles.section5_subtitle, styles.section5_subtitle2)}>
-      Aesthetic meets . funciton.
-    </h3>
-  );
-};
-const Section5Subtitle3 = () => {
-  return (
-    <h3 className={cn(styles.section5_subtitle, styles.section5_subtitle3)}>
-      Material . innovations is the future.{" "}
-    </h3>
-  );
-};
-
-const Section5Description1 = () => {
-  return (
-    <p
-      className={cn(styles.section5_description, styles.section5_description1)}
+    <div
+      className={cn(
+        `bg-gray-300 bg-center bg-cover bg-no-repeat`,
+        styles.section5_card
+      )}
+      style={{ backgroundImage: `url(${image})` }}
     >
-      A single technique can be applied across multiple disciplines.
-    </p>
-  );
-};
-const Section5Description2 = () => {
-  return (
-    <p
-      className={cn(styles.section5_description, styles.section5_description2)}
-    >
-      We don’t just make things look beautiful—they are engineered for comfort,
-      usability, and storytelling.
-    </p>
-  );
-};
-const Section5Description3 = () => {
-  return (
-    <p
-      className={cn(styles.section5_description, styles.section5_description3)}
-    >
-      We blend culinary, beauty, craftsmanship and innovative techniques into
-      design-forward creations.
-    </p>
+      <h3 className={styles.section5_card_title}>{title}</h3>
+    </div>
   );
 };

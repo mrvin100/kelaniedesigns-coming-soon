@@ -1,147 +1,94 @@
 .section5 {
   max-width: 90rem;
-  height: 163.5rem;
-  background: linear-gradient(
-      111deg,
-      rgba(50, 50, 50, 0) 42.32%,
-      #131313 85.68%
-    ),
-    url("/hg_background.jpg") lightgray 50% / cover no-repeat;
-  background-blend-mode: normal, multiply, normal;
+  height: 135.4375rem;
+  position: relative;
+  background: #e3e1e0;
 }
 
-.quote_container {
+.section5::before {
+  content: "";
   position: absolute;
-  top: 13.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 72.375rem;
-  height: 15.6875rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 39.75rem;
+  background: linear-gradient(
+      180deg,
+      rgba(227, 224, 224, 0) 48.5%,
+      #e3e0e0 100%
+    ),
+    url("/section5_bg.jpg") lightgray 50% / cover no-repeat;
 }
-.quote {
-  height: 6rem;
-  width: 72.125rem;
-  
-  font-family: var(--font-fraunces);
-  font-size: 6rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 5.3125rem;
-  text-transform: uppercase;
-  text-align: center;
+
+.section5::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 21rem;
+  background: linear-gradient(
+      180deg,
+      rgba(227, 224, 224, 0) 48.5%,
+      #e3e0e0 100%
+    ),
+    url("/section5_bg.jpg") lightgray 50% / cover no-repeat;
+  transform: rotate(180deg);
 }
-.quote_decoration {
+
+.section5_title {
+  width: 45.875rem;
+  height: 13.8125rem;
+  position: absolute;
+  top: 10.87rem;
+  left: 17.62rem;
+  color: #ff3e24;
   text-align: center;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #ff3e24;
-}
-.quote_text {
-  color: #ff3e24;
-}
-
-.rounded_image {
-  width: 30.0625rem;
-  height: 39.6875rem;
-  
-  border-radius: 37.5rem 37.5rem 0rem 0rem;
-  background: url("/section5_rounded_image1.png") lightgray 50% / cover
-    no-repeat;
-  position: absolute;
-  top: 42.5rem;
-  right: 17.25rem;
-}
-
-.square_image1 {
-  width: 26.9375rem;
-  height: 29.9375rem;
-  
-  background: url("/section5_square_image1.png") lightgray 50% / cover no-repeat;
-  position: absolute;
-  left: 19.94rem;
-  bottom: 53.31rem;
-}
-
-.square_image2 {
-  width: 11.125rem;
-  height: 17.3125rem;
-  
-  background: url("/section5_square_image2.png") lightgray 50% / cover no-repeat;
-  position: absolute;
-  left: 14.56rem;
-  bottom: 51.31rem;
-}
-.square_image3 {
-  width: 27.5625rem;
-  height: 28.125rem;
-  
-  background: url("/section5_square_image3.png") lightgray 50% / cover no-repeat;
-  position: absolute;
-  right: 21.31rem;
-  bottom: 26.44rem;
-}
-
-.section5_subtitle {
   font-family: var(--font-fraunces);
-  color: #ff3e24;
-  font-size: 3.75rem;
+  font-size: 5rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2.9375rem; /* 78.333% */
+  line-height: 4.375rem; /* 77.778% */
   text-transform: uppercase;
 }
-.section5_subtitle1 {
-  text-align: right;
-  width: 37.3125rem;
-  height: 9.125rem;
-  position: absolute;
-  right: 41.19rem;
-  top: 59.63rem;
-}
-.section5_subtitle2 {
-  text-align: center;
-  position: absolute;
-  right: 25.27rem;
-  bottom: 67.5rem;
-  width: 22.625rem;
-  height: 8.8125rem;
-}
-.section5_subtitle3 {
-  text-align: right;
-  width: 30.6875rem;
-  height: 6.5rem;
-  position: absolute;
-  left: 16.19rem;
-  bottom: 39.81rem;
-}
+
 .section5_description {
-  color: #ff9182;
-  font-family: var(--font-roboto-mono);
-  font-size: 1.125rem;
+  width: 33.75rem;
+  color: #ff3e24;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.625rem; /* 144.444% */
-}
-.section5_description1 {
-  text-align: right;
-  width: 18.625rem;
-  height: 3.25rem;
+  line-height: 1.625rem; /* 130% */
+  font-family: var(--font-roboto-mono);
   position: absolute;
-  left: 23.56rem;
-  top: 70rem;
+  top: 20.75rem;
+  right: 20.06rem;
 }
 
-.section5_description2 {
-  width: 19.5rem;
-  height: 6.4375rem;
-  position: absolute;
-  right: 19.94rem;
-  bottom: 59.5rem;
+.section5_cards {
+  width: 67.375rem;
 }
-.section5_description3 {
+
+.section5_card {
+  position: relative;
+  width: 15.37656rem;
+  height: 23.625rem;
+  border-radius: 12.5rem 12.5rem 0rem 0rem;
+}
+
+.section5_card_title {
+  color: #ff3e24;
   text-align: right;
-  width: 19.5rem;
-  height: 6.4375rem;
+  font-family: var(--font-fraunces);
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5625rem; /* 83.333% */
+  text-transform: uppercase;
+  width: 11.75206rem;
   position: absolute;
-  right: 51.44rem;
-  bottom: 29.75rem;
+  bottom: 5.15rem;
+  right: 10.82rem;
 }

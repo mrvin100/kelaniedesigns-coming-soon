@@ -18,7 +18,7 @@ interface Props {
   strokeWidth?: string;
   stroke?: string;
 }
-const HeadingBar = ({ className, styledBar, svgWidth, svgHeight, stroke, strokeWidth }: Readonly<Props>) => {
+export const HeadingBar = ({ className, styledBar, svgWidth, svgHeight, stroke, strokeWidth }: Readonly<Props>) => {
   return (
     <StyledBarContainer className={cn("", className)}>
       <StyledBar className={cn("", styledBar)}>
@@ -40,4 +40,3 @@ const HeadingBar = ({ className, styledBar, svgWidth, svgHeight, stroke, strokeW
   );
 };
 
-export default HeadingBar;

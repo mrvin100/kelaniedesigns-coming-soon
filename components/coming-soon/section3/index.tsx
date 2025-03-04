@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Button from "../ui/button";
-import HeadingBar from "../ui/heading-bar";
+import { Button, HeadingBar } from "../ui";
 import styles from "./styles.module.css";
 
 const Section3 = () => {

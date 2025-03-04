@@ -2,23 +2,15 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import Button from "../ui/button";
+import { Button, HeadingBar, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
-import HeadingBar from "../ui/heading-bar";
-import Logo from "../ui/logo";
-import Input from "../ui/input";
 
 const SectionOneTwo = () => {
   return (
-    <div
-      className={cn(
-        "relative bg-gradient-to-r from-[#313131] to-[#121212]",
-        styles.section_one_two
-      )}
-    >
+    <SectionBackground className={styles.section_one_two}>
       <Section1 />
       <Section2 />
-    </div>
+    </SectionBackground>
   );
 };
 export default SectionOneTwo;
