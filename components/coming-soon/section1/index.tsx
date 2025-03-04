@@ -4,24 +4,89 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { Button, HeadingBar, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
-import { section1Data } from "./section1.types";
+import { sectionOneTwoData as sectionData } from "./section1.types";
+import { memo } from "react";
 
-const SectionOneTwo = () => {
-  return (
-    <SectionBackground className={styles.section_one_two}>
-      <Section1 />
-      <Section2 />
-    </SectionBackground>
-  );
-};
-export default SectionOneTwo;
+// Section 1 Components
+const HeaderVideo = memo(() => (
+  <div className={styles.header_video}>
+    <video
+      className="w-full h-full object-cover"
+      loop
+      muted={true}
+      poster={sectionData.section1.video.poster}
+      autoPlay
+    >
+      <source src={sectionData.section1.video.src} type="video/mp4" />
+      Your browser does not support the video tag
+    </video>
+  </div>
+));
 
+const LeftTitle = memo(() => (
+  <h1 className={cn(styles.section1_title, styles.left_title)}>
+    {sectionData.section1.title.left.text[0]}
+    <Image
+      className={styles.left_title_bar}
+      src={sectionData.section1.title.left.bar.src}
+      width={100}
+      height={100}
+      alt={sectionData.section1.title.left.bar.alt}
+    />
+    {sectionData.section1.title.left.text[1]} <span>{sectionData.section1.title.left.text[2]}</span>
+  </h1>
+));
+
+const RightTitle = memo(() => (
+  <h1 className={cn(styles.section1_title, styles.right_title)}>
+    {sectionData.section1.title.right.text}
+  </h1>
+));
+
+const VerticalText = memo(() => (
+  <div className={styles.vertical_text_container}>
+    <span className={styles.vertical_text}>{sectionData.section1.verticalText.text}</span>
+    <HeadingBar 
+      className={styles.vertical_text_bar} 
+      svgWidth={sectionData.section1.verticalText.barWidth} 
+    />
+  </div>
+));
+
+// Section 2 Components
+const Section2Title = memo(() => (
+  <div className={styles.section2_title_container}>
+    <HeadingBar
+      className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block"
+      svgWidth={sectionData.section2.title.bar.width}
+    />
+    <h2 className={cn(styles.section1_title, styles.section2_title)}>
+        {sectionData.section2.title.text[0]} <br /> {sectionData.section2.title.text[1]}
+    </h2>
+  </div>
+));
+
+const Section2Description = memo(() => (
+  <p className={styles.section2_description}>
+    {sectionData.section2.description}
+  </p>
+));
+
+const Section2Images = memo(() => (
+  <>
+    <div className={styles.square_image1} style={{ backgroundImage: `url(${sectionData.section2.images.square1})` }} />
+    <div className={styles.rounded_image} style={{ backgroundImage: `url(${sectionData.section2.images.rounded})` }} />
+    <div className={styles.square_image2} style={{ backgroundImage: `url(${sectionData.section2.images.square2})` }} />
+  </>
+));
+
+// Main Components
 const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
       <Logo 
-        src={section1Data.logo.src}
-        alt={section1Data.logo.alt}
+        src={sectionData.section1.logo.src}
+        alt={sectionData.section1.logo.alt}
         className={styles.header_logo} 
       />
       <Button className={"absolute right-[3.8rem] top-[3.8rem]"} />
@@ -33,64 +98,11 @@ const Section1 = () => {
     </section>
   );
 };
-const HeaderVideo = () => {
-  return (
-    <div className={styles.header_video}>
-      <video
-        className="w-full h-full object-cover"
-        loop
-        muted={true}
-        poster={section1Data.video.poster}
-        autoPlay
-      >
-        <source src={section1Data.video.src} type="video/mp4" />
-        Your browser does not support the video tag
-      </video>
-    </div>
-  );
-};
-
-const LeftTitle = () => {
-  return (
-    <h1 className={cn(styles.section1_title, styles.left_title)}>
-      {section1Data.title.left.text[0]}
-      <Image
-        className={styles.left_title_bar}
-        src={section1Data.title.left.bar.src}
-        width={100}
-        height={100}
-        alt={section1Data.title.left.bar.alt}
-      />
-      {section1Data.title.left.text[1]} <span>{section1Data.title.left.text[2]}</span>
-    </h1>
-  );
-};
-
-const RightTitle = () => {
-  return (
-    <h1 className={cn(styles.section1_title, styles.right_title)}>
-      {section1Data.title.right.text}
-    </h1>
-  );
-};
-const VerticalText = () => {
-  return (
-    <div className={styles.vertical_text_container}>
-      <span className={styles.vertical_text}>{section1Data.verticalText.text}</span>
-      <HeadingBar 
-        className={styles.vertical_text_bar} 
-        svgWidth={section1Data.verticalText.barWidth} 
-      />
-    </div>
-  );
-};
 
 const Section2 = () => {
   return (
     <section className={cn("", styles.section2)}>
-      <SquareImage1 />
-      <RoundedImage1 />
-      <SquareImage2 />
+      <Section2Images />
       <Section2Title />
       <Button
         className={"absolute right-[25.69rem] bottom-[11.88rem]"}
@@ -101,39 +113,22 @@ const Section2 = () => {
   );
 };
 
-const SquareImage1 = () => {
-  return <div className={styles.square_image1}></div>;
-};
-
-const RoundedImage1 = () => {
-  return <div className={styles.rounded_image}></div>;
-};
-
-const SquareImage2 = () => {
-  return <div className={styles.square_image2}></div>;
-};
-
-const Section2Title = () => {
+const SectionOneTwo = () => {
   return (
-    <div className={styles.section2_title_container}>
-      <HeadingBar
-        className="absolute -top-4 left-[31%] -translate-x-[50%] inline-block"
-        svgWidth="17.9375rem"
-      />
-      <h2 className={cn(styles.section1_title, styles.section2_title)}>
-        A VISION <br /> OF ART
-      </h2>
-    </div>
+    <SectionBackground className={styles.section_one_two}>
+      <Section1 />
+      <Section2 />
+    </SectionBackground>
   );
 };
 
-const Section2Description = () => {
-  return (
-    <p className={styles.section2_description}>
-      Kelanie aims to be a unique blend of artistry – inspired by a rich mix of
-      cultural influences, seamlessly paired with Italian sophistication. We are
-      creating high-quality, one-of-a-kind jewelry, all lifestyle vision, a
-      creative force. Be part and add yourself to our newsletter.
-    </p>
-  );
-};
+// Add display names for debugging
+HeaderVideo.displayName = "HeaderVideo";
+LeftTitle.displayName = "LeftTitle";
+RightTitle.displayName = "RightTitle";
+VerticalText.displayName = "VerticalText";
+Section2Title.displayName = "Section2Title";
+Section2Description.displayName = "Section2Description";
+Section2Images.displayName = "Section2Images";
+
+export default SectionOneTwo;
