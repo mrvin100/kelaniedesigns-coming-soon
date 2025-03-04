@@ -66,7 +66,6 @@
   left: 1rem;
 }
 
-/* Style pour le premier mot (THE) */
 .left_title > span:first-child {
   display: block;
   line-height: 5.9375rem;
@@ -74,13 +73,11 @@
   position: relative;
 }
 
-/* Style pour le texte en italique (OF) */
 .left_title > div > span {
   font-style: italic;
   margin-left: 1rem;
 }
-
-/* Ajustement du conteneur de FUTURE OF */
+  
 .left_title > div {
   line-height: 5.9375rem;
   margin-top: 0;
@@ -112,7 +109,7 @@
   background: #ff3e24;
   top: 50%;
   transform: translateY(-50%);
-  left: -20rem;
+  left: -27.6rem;
 }
 
 .vertical_text {
@@ -180,7 +177,7 @@
   height: 2px;
   background: #ff3e24;
   top: -1rem;
-  left: 31%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
