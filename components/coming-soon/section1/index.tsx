@@ -5,6 +5,7 @@ import { Button, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
 import { sectionOneTwoData as sectionData } from "./section1.types";
 import { memo } from "react";
+import { motion } from "framer-motion";
 
 const HeaderVideo = memo(() => (
   <div className={styles.header_video}>
@@ -39,15 +40,51 @@ const LeftTitle = memo(() => {
 });
 
 const RightTitle = memo(() => (
-  <h1 className={cn(styles.section1_title, styles.right_title)}>
+  <motion.h1 
+    className={cn(styles.section1_title, styles.right_title)}
+    initial={{ 
+      opacity: 0, 
+      x: 30,
+      filter: 'blur(3px)'
+    }}
+    animate={{ 
+      opacity: 1, 
+      x: 0,
+      filter: 'blur(0px)',
+      transition: { 
+        duration: 1,
+        delay: 0.4,
+        ease: [0.25, 0.1, 0.25, 1],
+        opacity: { duration: 0.8 },
+        filter: { duration: 0.8 }
+      }
+    }}
+  >
     {sectionData.section1.title.right.text}
-  </h1>
+  </motion.h1>
 ));
 
 const VerticalText = memo(() => (
-  <div className={styles.vertical_text_container}>
-    <span className={styles.vertical_text}>{sectionData.section1.verticalText.text}</span>
-  </div>
+  <motion.div 
+    className={styles.vertical_text_container}
+    initial={{ 
+      opacity: 0,
+      y: 10
+    }}
+    animate={{ 
+      opacity: 1,
+      y: 0,
+      transition: { 
+        duration: 0.6,
+        delay: 0.8,
+        ease: "easeOut"
+      }
+    }}
+  >
+    <span className={styles.vertical_text}>
+      {sectionData.section1.verticalText.text}
+    </span>
+  </motion.div>
 ));
 
 const Section2Title = memo(() => {

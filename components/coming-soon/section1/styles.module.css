@@ -191,6 +191,7 @@
   position: absolute;
   right: 15.31rem;
   bottom: 22.69rem;
+  z-index: 3;
 
   width: 27.375rem;
   height: 18.0625rem;
@@ -208,4 +209,5 @@
   right: 18.69rem;
   bottom: 18rem;
   width: 24.5625rem;
+  z-index: 3;
 }
