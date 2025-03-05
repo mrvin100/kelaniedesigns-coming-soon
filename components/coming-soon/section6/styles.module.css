@@ -1,6 +1,7 @@
 .section6 {
   max-width: 90rem;
   height: 119.125rem;
+  margin: 0 auto;
 }
 
 .square_image1 {
@@ -49,7 +50,7 @@
   width: 63.75rem;
   height: 11.6875rem;
   position: absolute;
-  right: 18.06rem;
+  left: 19.62rem;
   top: 7.5rem;
 }
 .section6_subtitle2 {

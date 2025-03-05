@@ -1,9 +1,9 @@
-import ComingSoon from "@/components/coming-soon";
-// import Section4 from "@/components/coming-soon/section4";
+// import ComingSoon from "@/components/coming-soon";
+import Section6 from "@/components/coming-soon/section6";
 
 export default function Home() {
   return (
-    <ComingSoon />
-    // <Section4 />
+    // <ComingSoon />
+    <Section6 />
   );
 }
