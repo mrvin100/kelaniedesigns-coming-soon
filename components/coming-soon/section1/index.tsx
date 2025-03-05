@@ -29,13 +29,54 @@ const LeftTitle = memo(() => {
   const lastWord = words[words.length - 1];
 
   return (
-    <h1 className={cn(styles.section1_title, styles.left_title)}>
-      <span>{firstWord}</span>
-      <div>
+    <motion.h1 
+      className={cn(styles.section1_title, styles.left_title)}
+      initial={{ opacity: 0 }}
+      animate={{ 
+        opacity: 1,
+        transition: { duration: 0.8 }
+      }}
+    >
+      <motion.span
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.8,
+            ease: [0.25, 0.1, 0.25, 1],
+          }
+        }}
+      >
+        {firstWord}
+      </motion.span>
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ 
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0.25, 0.1, 0.25, 1]
+          }
+        }}
+      >
         {middleWords}{" "}
-        <span>{lastWord}</span>
-      </div>
-    </h1>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 1,
+            transition: {
+              duration: 0.6,
+              delay: 0.4
+            }
+          }}
+        >
+          {lastWord}
+        </motion.span>
+      </motion.div>
+    </motion.h1>
   );
 });
 
@@ -55,7 +96,7 @@ const RightTitle = memo(() => (
         duration: 1,
         delay: 0.4,
         ease: [0.25, 0.1, 0.25, 1],
-        opacity: { duration: 0.8 },
+        opacity: { duration: 0.8 }, 
         filter: { duration: 0.8 }
       }
     }}
