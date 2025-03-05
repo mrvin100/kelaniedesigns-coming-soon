@@ -110,6 +110,22 @@
   top: 50%;
   transform: translateY(-50%);
   left: -27.6rem;
+  animation: lineMove 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes lineMove {
+  0% {
+    transform: translateY(-50%) scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) scaleX(0.97);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-50%) scaleX(1);
+    opacity: 1;
+  }
 }
 
 .vertical_text {
@@ -122,6 +138,8 @@
   letter-spacing: 0.3rem;
   width: 6.25rem;
   height: 1.25rem;
+  display: inline-block;
+  transform-origin: center;
 }
 
 .section2 {

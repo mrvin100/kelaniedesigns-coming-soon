@@ -81,9 +81,20 @@ const VerticalText = memo(() => (
       }
     }}
   >
-    <span className={styles.vertical_text}>
+    <motion.span 
+      className={styles.vertical_text}
+      animate={{
+        x: [0, 6, 0],
+      }}
+      transition={{
+        duration: 1.8,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "reverse"
+      }}
+    >
       {sectionData.section1.verticalText.text}
-    </span>
+    </motion.span>
   </motion.div>
 ));
 
