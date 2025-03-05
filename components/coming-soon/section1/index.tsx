@@ -156,18 +156,50 @@ const Section2Title = memo(() => {
   const restOfWords = words.slice(2).join(" ");
 
   return (
-    <div className={styles.section2_title_container}>
-      <h2 className={cn(styles.section1_title, styles.section2_title)}>
+    <motion.div 
+      className={styles.section2_title_container}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: { duration: 0.8 }
+      }}
+      viewport={{ once: true }}
+    >
+      <motion.h2 
+        className={cn(styles.section1_title, styles.section2_title)}
+        initial={{ y: 30 }}
+        whileInView={{
+          y: 0,
+          transition: {
+            duration: 0.8,
+            ease: [0.25, 0.1, 0.25, 1]
+          }
+        }}
+        viewport={{ once: true }}
+      >
         {firstTwoWords} <br /> {restOfWords}
-      </h2>
-    </div>
+      </motion.h2>
+    </motion.div>
   );
 });
 
 const Section2Description = memo(() => (
-  <p className={styles.section2_description}>
+  <motion.p 
+    className={styles.section2_description}
+    initial={{ opacity: 0, x: 30 }}
+    whileInView={{
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.2,
+        ease: "easeOut"
+      }
+    }}
+    viewport={{ once: true }}
+  >
     {sectionData.section2.description}
-  </p>
+  </motion.p>
 ));
 
 const Section2Images = memo(() => (
@@ -219,14 +251,37 @@ const Section2Images = memo(() => (
   </>
 ));
 
+const LogoWrapper = memo(() => (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }}
+  >
+    <Logo
+      src={sectionData.section1.logo.src}
+      alt={sectionData.section1.logo.alt}
+      className={styles.header_logo}
+    />
+  </motion.div>
+));
+
 const Section1 = () => {
   return (
-    <section className={cn("", styles.section1)}>
-      <Logo
-        src={sectionData.section1.logo.src}
-        alt={sectionData.section1.logo.alt}
-        className={styles.header_logo}
-      />
+    <motion.section 
+      className={cn("", styles.section1)}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { duration: 0.8 }
+      }}
+    >
+      <LogoWrapper />
       <Button
         className="absolute right-[3.8rem] top-[3.8rem]"
         variant="circle"
@@ -236,13 +291,21 @@ const Section1 = () => {
       <RightTitle />
       <VerticalText />
       <Section2Description />
-    </section>
+    </motion.section>
   );
 };
 
 const Section2 = () => {
   return (
-    <section className={cn("", styles.section2)}>
+    <motion.section 
+      className={cn("", styles.section2)}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: { duration: 0.8 }
+      }}
+      viewport={{ once: true }}
+    >
       <Section2Images />
       <Section2Title />
       <Button
@@ -254,7 +317,7 @@ const Section2 = () => {
         placeholder="EMAIL ADRESS"
         variant="newsletter"
       />
-    </section>
+    </motion.section>
   );
 };
 
@@ -274,4 +337,5 @@ VerticalText.displayName = "VerticalText";
 Section2Title.displayName = "Section2Title";
 Section2Description.displayName = "Section2Description";
 Section2Images.displayName = "Section2Images";
+LogoWrapper.displayName = "LogoWrapper";
 export default SectionOneTwo;
