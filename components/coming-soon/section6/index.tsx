@@ -12,20 +12,44 @@ const Images = memo(() => (
   <>
     <motion.div
       className={styles.square_image1}
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 100, opacity: 0, rotateZ: -5 }}
       whileInView={{ 
         y: 0, 
         opacity: 1,
-        transition: { duration: 0.8, ease: "easeOut" }
+        rotateZ: 0,
+        transition: { 
+          duration: 1.2,
+          ease: [0.25, 0.1, 0.25, 1]
+        }
       }}
       style={{ backgroundImage: `url(${sectionData.images.square1})` }}
     />
-    <div
+    <motion.div
       className={styles.square_image2}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ 
+        opacity: 1,
+        scale: 1,
+        transition: {
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeOut"
+        }
+      }}
       style={{ backgroundImage: `url(${sectionData.images.square2})` }}
     />
-    <div
+    <motion.div
       className={styles.square_image3}
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ 
+        opacity: 1,
+        x: 0,
+        transition: {
+          delay: 0.5,
+          duration: 0.8,
+          ease: "easeOut"
+        }
+      }}
       style={{ backgroundImage: `url(${sectionData.images.square3})` }}
     />
   </>
@@ -62,11 +86,23 @@ const Section6Subtitle2 = memo(() => {
   
   return (
     <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle2)}>
-      {textArray.map((line) => (
-        <Fragment key={line}>
-          <span>{line}</span>
+      {textArray.map((line, index) => (
+        <motion.span
+          key={line}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: index * 0.2,
+              duration: 0.6,
+              ease: [0.25, 0.1, 0.25, 1]
+            }
+          }}
+        >
+          {line}
           <br />
-        </Fragment>
+        </motion.span>
       ))}
     </h3>
   );
@@ -139,11 +175,50 @@ const FooterCopyright = memo(() => (
 ));
 
 const Footer = memo(() => (
-  <footer className={styles.footer}>
-    <Logo className="h-[3.34294rem] w-[9.97188rem]" />
+  <motion.footer 
+    className={styles.footer}
+    initial={{ opacity: 0 }}
+    whileInView={{
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut"
+      }
+    }}
+    viewport={{ once: true }}
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: { 
+          duration: 0.8,
+          delay: 0.2,
+          ease: [0.25, 0.1, 0.25, 1]
+        }
+      }}
+      viewport={{ once: true }}
+    >
+      <Logo className="h-[3.34294rem] w-[9.97188rem]" />
+    </motion.div>
     <FooterSocials />
-    <FooterCopyright />
-  </footer>
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: { 
+          duration: 0.6,
+          delay: 0.4,
+          ease: "easeOut"
+        }
+      }}
+      viewport={{ once: true }}
+    >
+      <FooterCopyright />
+    </motion.div>
+  </motion.footer>
 ));
 
 const Section6 = () => {
@@ -159,10 +234,24 @@ const Section6 = () => {
         placeholder={sectionData.input.placeholder}
         variant="newsletter"
       />
-      <Button
-        className="absolute left-[43%] translate-x-[-50%] bottom-[23.5rem]"
-        variant="rounded"
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut"
+          }
+        }}
+        viewport={{ once: true }}
+      >
+        <Button
+          className="absolute left-[43%] translate-x-[-50%] bottom-[23.5rem]"
+          variant="rounded"
+        />
+      </motion.div>
       <Footer />
     </SectionBackground>
   );
