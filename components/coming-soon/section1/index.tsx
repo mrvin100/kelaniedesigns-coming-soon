@@ -8,7 +8,18 @@ import { memo } from "react";
 import { motion } from "framer-motion";
 
 const HeaderVideo = memo(() => (
-  <div className={styles.header_video}>
+  <motion.div 
+    className={styles.header_video}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ 
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+  >
     <video
       className="w-full h-full object-cover"
       loop
@@ -19,7 +30,7 @@ const HeaderVideo = memo(() => (
       <source src={sectionData.section1.video.src} type="video/mp4" />
       Your browser does not support the video tag
     </video>
-  </div>
+  </motion.div>
 ));
 
 const LeftTitle = memo(() => {
@@ -161,17 +172,49 @@ const Section2Description = memo(() => (
 
 const Section2Images = memo(() => (
   <>
-    <div
+    <motion.div
       className={styles.square_image1}
       style={{ backgroundImage: `url(${sectionData.section2.images.square1})` }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ 
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut"
+        }
+      }}
+      viewport={{ once: true }}
     />
-    <div
+    <motion.div
       className={styles.rounded_image}
       style={{ backgroundImage: `url(${sectionData.section2.images.rounded})` }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ 
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 1,
+          delay: 0.2,
+          ease: [0.25, 0.1, 0.25, 1]
+        }
+      }}
+      viewport={{ once: true }}
     />
-    <div
+    <motion.div
       className={styles.square_image2}
       style={{ backgroundImage: `url(${sectionData.section2.images.square2})` }}
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ 
+        opacity: 1,
+        x: 0,
+        transition: {
+          duration: 0.8,
+          delay: 0.4,
+          ease: "easeOut"
+        }
+      }}
+      viewport={{ once: true }}
     />
   </>
 ));
