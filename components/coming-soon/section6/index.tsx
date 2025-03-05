@@ -5,13 +5,22 @@ import { Logo, Button, Input, SectionBackground } from "../ui";
 import Image from "next/image";
 import Link from "next/link";
 import { section6Data as sectionData } from "./section6.types";
-import { memo } from "react";
+import { memo, Fragment } from "react";
 
 const Images = memo(() => (
   <>
-    <div className={styles.square_image1} style={{ backgroundImage: `url(${sectionData.images.square1})` }} />
-    <div className={styles.square_image2} style={{ backgroundImage: `url(${sectionData.images.square2})` }} />
-    <div className={styles.square_image3} style={{ backgroundImage: `url(${sectionData.images.square3})` }} />
+    <div
+      className={styles.square_image1}
+      style={{ backgroundImage: `url(${sectionData.images.square1})` }}
+    />
+    <div
+      className={styles.square_image2}
+      style={{ backgroundImage: `url(${sectionData.images.square2})` }}
+    />
+    <div
+      className={styles.square_image3}
+      style={{ backgroundImage: `url(${sectionData.images.square3})` }}
+    />
   </>
 ));
 
@@ -33,11 +42,20 @@ const Section6Subtitle1 = memo(() => {
   );
 });
 
-const Section6Subtitle2 = memo(() => (
-  <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle2)}>
-    {sectionData.subtitles.second.text}
-  </h3>
-));
+const Section6Subtitle2 = memo(() => {
+  const { textArray } = sectionData.subtitles.second;
+  
+  return (
+    <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle2)}>
+      {textArray.map((line) => (
+        <Fragment key={line}>
+          <span>{line}</span>
+          <br />
+        </Fragment>
+      ))}
+    </h3>
+  );
+});
 
 const Section6Description1 = memo(() => (
   <p className={cn(styles.section6_description, styles.section6_description1)}>
@@ -51,17 +69,19 @@ const Section6Description2 = memo(() => (
   </p>
 ));
 
-const FooterSocialIcon = memo(({ src, href }: { src: string; href: string }) => (
-  <Link href={href} target="_blank">
-    <Image
-      src={src}
-      alt="footer social icon"
-      width={100}
-      height={100}
-      className="w-[2.28956rem] h-[2.25713rem]"
-    />
-  </Link>
-));
+const FooterSocialIcon = memo(
+  ({ src, href }: { src: string; href: string }) => (
+    <Link href={href} target="_blank">
+      <Image
+        src={src}
+        alt="footer social icon"
+        width={100}
+        height={100}
+        className="w-[2.28956rem] h-[2.25713rem]"
+      />
+    </Link>
+  )
+);
 
 const FooterSocials = memo(() => (
   <div className={styles.footer_socials}>
@@ -91,10 +111,10 @@ const Section6 = () => {
       <Section6Description1 />
       <Section6Subtitle2 />
       <Section6Description2 />
-      <Input 
-        className={styles.subscription_input} 
-        placeholder={sectionData.input.placeholder} 
-        variant="newsletter" 
+      <Input
+        className={styles.subscription_input}
+        placeholder={sectionData.input.placeholder}
+        variant="newsletter"
       />
       <Button
         className="absolute left-[50%] translate-x-[-50%] bottom-[23.5rem]"

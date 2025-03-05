@@ -1,6 +1,3 @@
-interface Subtitle {
-  text: string;
-}
 
 interface Description {
   text: string;
@@ -28,8 +25,8 @@ interface Footer {
 
 export interface Section6Data {
   subtitles: {
-    first: Subtitle;
-    second: Subtitle;
+    first: {text: string};
+    second: {textArray: string[]};
   };
   descriptions: {
     first: Description;
@@ -48,7 +45,7 @@ export const section6Data: Section6Data = {
       text: ". Kelanie Designs is just getting started."
     },
     second: {
-      text: "So go ahead - be bold. be curious. be Kelanie."
+      textArray: ["So go a head - ","be bold. be curious."," be Kelanie."]
     }
   },
   descriptions: {

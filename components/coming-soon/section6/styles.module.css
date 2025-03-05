@@ -55,8 +55,8 @@
 }
 .section6_subtitle2 {
   text-align: center;
-  width: 42.875rem;
-  height: 10.875rem;
+  width: 63.75rem;
+  height: 11.6875rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -140,7 +140,6 @@
 .line_container {
   position: relative;
   display: inline-block;
-  padding-left: 0rem;
 }
 
 .red_line {
