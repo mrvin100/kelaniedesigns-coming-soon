@@ -6,11 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { section6Data as sectionData } from "./section6.types";
 import { memo, Fragment } from "react";
+import { motion } from "motion/react";
 
 const Images = memo(() => (
   <>
-    <div
+    <motion.div
       className={styles.square_image1}
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ 
+        y: 0, 
+        opacity: 1,
+        transition: { duration: 0.8, ease: "easeOut" }
+      }}
       style={{ backgroundImage: `url(${sectionData.images.square1})` }}
     />
     <div
@@ -31,14 +38,22 @@ const Section6Subtitle1 = memo(() => {
   const lastLine = words[words.length - 1];
 
   return (
-    <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle1)}>
+    <motion.h3 
+      className={cn(styles.section6_subtitle, styles.section6_subtitle1)}
+      initial={{ x: -50, opacity: 0 }}
+      whileInView={{ 
+        x: 0, 
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeOut" }
+      }}
+    >
       <span className={styles.first_line}>{firstLine}</span>
       <span className={styles.line_container}>
         {secondLine}
         <span className={styles.red_line} />
       </span>
       <span className={styles.last_line}>{lastLine}</span>
-    </h3>
+    </motion.h3>
   );
 });
 
@@ -69,8 +84,36 @@ const Section6Description2 = memo(() => (
   </p>
 ));
 
-const FooterSocialIcon = memo(
-  ({ src, href }: { src: string; href: string }) => (
+const FooterSocialIcon = memo(({ src, href }: { src: string; href: string }) => (
+  <motion.div
+    initial={{ opacity: 0.6 }}
+    whileHover={{ 
+      scale: 1.15,
+      opacity: 1,
+      rotate: [0, -10, 10, 0],
+      transition: {
+        rotate: {
+          duration: 0.6,
+          ease: "easeInOut",
+          repeat: 0
+        },
+        scale: {
+          type: "spring",
+          stiffness: 400,
+          damping: 17
+        }
+      }
+    }}
+    whileTap={{ 
+      scale: 0.9,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    }}
+  >
     <Link href={href} target="_blank">
       <Image
         src={src}
@@ -80,8 +123,8 @@ const FooterSocialIcon = memo(
         className="w-[2.28956rem] h-[2.25713rem]"
       />
     </Link>
-  )
-);
+  </motion.div>
+));
 
 const FooterSocials = memo(() => (
   <div className={styles.footer_socials}>
@@ -125,7 +168,6 @@ const Section6 = () => {
   );
 };
 
-// Display Names
 Images.displayName = "Images";
 Section6Subtitle1.displayName = "Section6Subtitle1";
 Section6Subtitle2.displayName = "Section6Subtitle2";
