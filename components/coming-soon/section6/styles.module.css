@@ -88,14 +88,6 @@
   bottom: 36.81rem;
 }
 
-.subscription_input {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 30.44rem;
-  width: 43.875rem;
-}
-
 .footer {
   position: absolute;
   bottom: 5.52rem;
@@ -151,4 +143,12 @@
   right: -12.94rem;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.subscription_input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30.44rem;
+  width: 43.875rem;
 }

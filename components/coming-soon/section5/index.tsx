@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
 import { TeamMember, section5Data } from "./section5.types";
 import { memo } from "react";
+import { motion } from "motion/react";
 
 interface Section5CardProps extends TeamMember {
   className?: string;
@@ -39,16 +40,43 @@ const Section5Cards = memo(() => {
   );
 });
 
+const Section5Title = memo(() => (
+  <motion.h2 
+    className={styles.section5_title}
+    initial={{ 
+      opacity: 0,
+    }}
+    whileInView={{ 
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+  >
+    {section5Data.title}
+  </motion.h2>
+));
+
 const Section5 = () => {
   return (
     <section className={cn(styles.section5)}>
       <div className={styles.section5_content}>
-        <h2 className={styles.section5_title}>
-          {section5Data.title}
-        </h2>
-        <p className={styles.section5_description}>
+        <Section5Title />
+        <motion.p 
+          className={styles.section5_description}
+          initial={{ opacity: 0 }}
+          whileInView={{ 
+            opacity: 1,
+            transition: {
+              delay: 0.3,
+              duration: 0.5,
+              ease: "easeOut"
+            }
+          }}
+        >
           {section5Data.description}
-        </p>
+        </motion.p>
       </div>
       <Section5Cards />
     </section>
@@ -57,5 +85,6 @@ const Section5 = () => {
 
 Section5Card.displayName = "Section5Card";
 Section5Cards.displayName = "Section5Cards";
+Section5Title.displayName = "Section5Title";
 
 export default Section5;

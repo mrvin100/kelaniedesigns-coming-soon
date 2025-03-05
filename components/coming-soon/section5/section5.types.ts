@@ -17,7 +17,7 @@ export const section5Data: Section5Data = {
   teamMembers: [
     {
       id: "kelly",
-      name: "Kelly",
+      name: "Kelly (Stéphanie Janette aka kelanie)",
       role: "Stéphanie Janette aka kelanie - Founder & Creative Director",
       image: "/section5_card_bg1.jpg"
     },

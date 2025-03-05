@@ -54,12 +54,13 @@ const BaseButton = styled.button<{ variant: 'circle' | 'rounded' }>`
 const ButtonText = styled.span`
   color: inherit;
   text-align: center;
-  font-family: Roboto;
+  font-family: var(--font-roboto-mono);
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.125rem;
   letter-spacing: 0.1875rem;
+  text-transform: uppercase;
 `;
 
 export const Button = ({ 

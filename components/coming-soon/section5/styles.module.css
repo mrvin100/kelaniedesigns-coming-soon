@@ -43,6 +43,11 @@
   z-index: 0;
 }
 
+.section5_title_wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .section5_title {
   width: 45.875rem;
   height: 13.8125rem;
@@ -61,17 +66,6 @@
   line-height: 4.375rem;
   text-transform: uppercase;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 5.389rem;
-    right: -2rem;
-    width: 8.3125rem;
-    height: 2px;
-    background-color: #FF3E24;
-    transition: all 0.3s ease;
-  }
-
   @media (max-width: 1200px) {
     height: auto;
     position: relative;
@@ -81,24 +75,12 @@
     font-size: 4rem;
     line-height: 3.8rem;
     text-align: center;
-
-    &::after {
-      width: 6rem;
-      right: 5%;
-      top: -1.5rem;
-    }
   }
 
   @media (max-width: 900px) {
     width: 85%;
     font-size: 3.5rem;
     line-height: 3.2rem;
-
-    &::after {
-      width: 5rem;
-      right: 8%;
-      top: -1.2rem;
-    }
   }
 
   @media (max-width: 640px) {
@@ -106,12 +88,65 @@
     font-size: 2.8rem;
     line-height: 2.6rem;
     top: 3rem;
+  }
 
-    &::after {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 8.3125rem;
+    height: 2px;
+    background: #ff3e24;
+    right: 0rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 1200px) {
+      width: 6rem;
+      right: 5%;
+      top: -1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      width: 5rem;
+      right: 8%;
+      top: -1.2rem;
+    }
+
+    @media (max-width: 640px) {
       width: 4rem;
       right: 10%;
       top: -1rem;
     }
+  }
+}
+
+.section5_title_line {
+  content: '';
+  position: absolute;
+  top: 5.389rem;
+  right: -2rem;
+  width: 8.3125rem;
+  height: 2px;
+  background-color: #FF3E24;
+  display: block;
+  transform-origin: left;
+
+  @media (max-width: 1200px) {
+    width: 6rem;
+    right: 5%;
+    top: -1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    width: 5rem;
+    right: 8%;
+    top: -1.2rem;
+  }
+
+  @media (max-width: 640px) {
+    width: 4rem;
+    right: 10%;
+    top: -1rem;
   }
 }
 
@@ -125,8 +160,7 @@
   font-family: var(--font-roboto-mono);
   position: absolute;
   top: 20.75rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 19.9rem;
   text-align: left;
 
   @media (max-width: 1200px) {
@@ -198,7 +232,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   margin: 0 auto;
 
   @media (max-width: 1200px) {
@@ -260,7 +295,8 @@
 }
 
 .section5_card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(255, 62, 36, 0.08);
 }
 
 /* Ajout d'un conteneur pour gérer l'espacement */
