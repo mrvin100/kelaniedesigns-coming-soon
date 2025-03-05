@@ -5,16 +5,16 @@ import { Logo, Button, Input, SectionBackground } from "../ui";
 import Image from "next/image";
 import Link from "next/link";
 
-const Section8 = () => {
+const section6 = () => {
   return (
-    <SectionBackground className={styles.section8}>
+    <SectionBackground className={styles.section6}>
       <SquareImage1 />
       <SquareImage2 />
       <SquareImage3 />
-      <Section8Subtitle1 />
-      <Section8Description1 />
-      <Section8Subtitle2 />
-      <Section8Description2 />
+      <Section6Subtitle1 />
+      <Section6Description1 />
+      <Section6Subtitle2 />
+      <Section6Description2 />
       <Input className={styles.subscription_input} placeholder="EMAIL ADRESS" variant="newsletter" />
       <Button
         className={"absolute left-[50%] translate-x-[-50%] bottom-[23.5rem]"}
@@ -25,7 +25,7 @@ const Section8 = () => {
   );
 };
 
-export default Section8;
+export default section6;
 
 const SquareImage1 = () => {
   return <div className={styles.square_image1}></div>;
@@ -37,18 +37,18 @@ const SquareImage3 = () => {
   return <div className={styles.square_image3}></div>;
 };
 
-const Section8Subtitle1 = () => {
+const Section6Subtitle1 = () => {
   return (
-    <h3 className={cn(styles.section8_subtitle, styles.section8_subtitle1)}>
+    <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle1)}>
       . Kelanie Designs is just getting started.
     </h3>
   );
 };
 
-const Section8Description1 = () => {
+const Section6Description1 = () => {
   return (
     <p
-      className={cn(styles.section8_description, styles.section8_description1)}
+      className={cn(styles.section6_description, styles.section6_description1)}
     >
       We&apos;re not just making jewelry; we&apos;re baking up a future where art,
       technology, and material innovation rise together like a perfectly puffed
@@ -58,18 +58,18 @@ const Section8Description1 = () => {
   );
 };
 
-const Section8Subtitle2 = () => {
+const Section6Subtitle2 = () => {
   return (
-    <h3 className={cn(styles.section8_subtitle, styles.section8_subtitle2)}>
+    <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle2)}>
       So go ahead - be bold. be curious. be Kelanie.
     </h3>
   );
 };
 
-const Section8Description2 = () => {
+  const Section6Description2 = () => {
   return (
     <p
-      className={cn(styles.section8_description, styles.section8_description2)}
+      className={cn(styles.section6_description, styles.section6_description2)}
     >
       Add yourself to our newsletter to be part of our mission.
     </p>

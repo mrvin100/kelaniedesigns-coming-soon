@@ -1,13 +1,6 @@
-.section8 {
+.section6 {
   max-width: 90rem;
   height: 119.125rem;
-  background: linear-gradient(
-      111deg,
-      rgba(50, 50, 50, 0) 42.32%,
-      #131313 85.68%
-    ),
-    url("/hg_background.jpg") lightgray 50% / cover no-repeat;
-  background-blend-mode: normal, multiply, normal;
 }
 
 .square_image1 {
@@ -18,7 +11,7 @@
       rgba(76, 51, 51, 0.62) 0%,
       rgba(76, 51, 51, 0.62) 100%
     ),
-    url("/section8_square_image1.png") lightgray 50% / cover no-repeat;
+    url("/section6_square_image1.png") lightgray 50% / cover no-repeat;
   background-blend-mode: multiply, normal;
   position: absolute;
   left: 23.6rem;
@@ -28,7 +21,7 @@
 .square_image2 {
   width: 13.875rem;
   height: 20.625rem;
-  background: url("/section8_square_image2.png") lightgray -6.988px -2.041px /
+  background: url("/section6_square_image2.png") lightgray -6.988px -2.041px /
     104.963% 101.637% no-repeat;
   position: absolute;
   left: 27.62rem;
@@ -37,13 +30,13 @@
 .square_image3 {
   width: 17.5625rem;
   height: 14.625rem;
-  background: url("/section8_square_image3.png") lightgray 50% / cover no-repeat;
+  background: url("/section6_square_image3.png") lightgray 50% / cover no-repeat;
   position: absolute;
   right: 34.75rem;
   top: 35.88rem;
 }
 
-.section8_subtitle {
+.section6_subtitle {
   font-family: var(--font-fraunces);
   color: #ff3e24;
   font-size: 4.375rem;
@@ -52,14 +45,14 @@
   line-height: 3.75rem; /* 85.714% */
   text-transform: uppercase;
 }
-.section8_subtitle1 {
+.section6_subtitle1 {
   width: 63.75rem;
   height: 11.6875rem;
   position: absolute;
   right: 18.06rem;
   top: 7.5rem;
 }
-.section8_subtitle2 {
+.section6_subtitle2 {
   text-align: center;
   width: 42.875rem;
   height: 10.875rem;
@@ -69,7 +62,7 @@
   bottom: 41.87rem;
 }
 
-.section8_description {
+.section6_description {
   color: #ffa89c;
   font-family: var(--font-roboto-mono);
   font-size: 1.125rem;
@@ -77,14 +70,14 @@
   font-weight: 400;
   line-height: 1.625rem; /* 144.444% */
 }
-.section8_description1 {
+.section6_description1 {
   width: 25.3125rem;
   height: 14.5625rem;
   position: absolute;
   right: 22.19rem;
   top: 21.31rem;
 }
-.section8_description2 {
+.section6_description2 {
   text-align: center;
   width: 46.25rem;
   height: 1.875rem;
