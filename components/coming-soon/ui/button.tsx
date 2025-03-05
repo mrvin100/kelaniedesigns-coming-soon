@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface ButtonProps {
   text?: string;
@@ -8,7 +9,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const BaseButtonContainer = styled.div<{ variant: 'circle' | 'rounded' }>`
+const BaseButtonContainer = styled(motion.div)<{ variant: 'circle' | 'rounded' }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +34,8 @@ const BaseButton = styled.button<{ variant: 'circle' | 'rounded' }>`
   border-radius: 6.25rem;
   border: 1.5px solid #ff3e24;
   transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
 
   &:hover {
     background-color: #ff3e24;
@@ -70,11 +73,37 @@ export const Button = ({
   onClick 
 }: Readonly<ButtonProps>) => {
   const defaultText = variant === 'circle' ? 'JOIN US' : 'SUBSCRIBE';
+  
+  const buttonMotion = variant === 'circle' ? {
+    initial: { opacity: 0, y: -10 },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    },
+    whileHover: { 
+      scale: 1.02,
+      transition: {
+        duration: 0.2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    },
+    whileTap: { 
+      scale: 0.98,
+      transition: {
+        duration: 0.1
+      }
+    }
+  } : {};
 
   return (
     <BaseButtonContainer 
       className={cn("", className)} 
       variant={variant}
+      {...buttonMotion}
     >
       <BaseButton 
         variant={variant}

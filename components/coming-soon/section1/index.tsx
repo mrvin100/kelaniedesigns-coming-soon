@@ -29,48 +29,48 @@ const LeftTitle = memo(() => {
   const lastWord = words[words.length - 1];
 
   return (
-    <motion.h1 
+    <motion.h1
       className={cn(styles.section1_title, styles.left_title)}
       initial={{ opacity: 0 }}
-      animate={{ 
+      animate={{
         opacity: 1,
-        transition: { duration: 0.8 }
+        transition: { duration: 0.8 },
       }}
     >
       <motion.span
         initial={{ opacity: 0, y: 20 }}
-        animate={{ 
+        animate={{
           opacity: 1,
           y: 0,
           transition: {
             duration: 0.8,
             ease: [0.25, 0.1, 0.25, 1],
-          }
+          },
         }}
       >
         {firstWord}
       </motion.span>
       <motion.div
         initial={{ opacity: 0, x: -30 }}
-        animate={{ 
+        animate={{
           opacity: 1,
           x: 0,
           transition: {
             duration: 0.8,
             delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1]
-          }
+            ease: [0.25, 0.1, 0.25, 1],
+          },
         }}
       >
         {middleWords}{" "}
         <motion.span
           initial={{ opacity: 0 }}
-          animate={{ 
+          animate={{
             opacity: 1,
             transition: {
               duration: 0.6,
-              delay: 0.4
-            }
+              delay: 0.4,
+            },
           }}
         >
           {lastWord}
@@ -81,24 +81,24 @@ const LeftTitle = memo(() => {
 });
 
 const RightTitle = memo(() => (
-  <motion.h1 
+  <motion.h1
     className={cn(styles.section1_title, styles.right_title)}
-    initial={{ 
-      opacity: 0, 
+    initial={{
+      opacity: 0,
       x: 30,
-      filter: 'blur(3px)'
+      filter: "blur(3px)",
     }}
-    animate={{ 
-      opacity: 1, 
+    animate={{
+      opacity: 1,
       x: 0,
-      filter: 'blur(0px)',
-      transition: { 
+      filter: "blur(0px)",
+      transition: {
         duration: 1,
         delay: 0.4,
         ease: [0.25, 0.1, 0.25, 1],
-        opacity: { duration: 0.8 }, 
-        filter: { duration: 0.8 }
-      }
+        opacity: { duration: 0.8 },
+        filter: { duration: 0.8 },
+      },
     }}
   >
     {sectionData.section1.title.right.text}
@@ -106,23 +106,23 @@ const RightTitle = memo(() => (
 ));
 
 const VerticalText = memo(() => (
-  <motion.div 
+  <motion.div
     className={styles.vertical_text_container}
-    initial={{ 
+    initial={{
       opacity: 0,
-      y: 10
+      y: 10,
     }}
-    animate={{ 
+    animate={{
       opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         delay: 0.8,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     }}
   >
-    <motion.span 
+    <motion.span
       className={styles.vertical_text}
       animate={{
         x: [0, 6, 0],
@@ -131,7 +131,7 @@ const VerticalText = memo(() => (
         duration: 1.8,
         ease: "easeInOut",
         repeat: Infinity,
-        repeatType: "reverse"
+        repeatType: "reverse",
       }}
     >
       {sectionData.section1.verticalText.text}
@@ -161,21 +161,33 @@ const Section2Description = memo(() => (
 
 const Section2Images = memo(() => (
   <>
-    <div className={styles.square_image1} style={{ backgroundImage: `url(${sectionData.section2.images.square1})` }} />
-    <div className={styles.rounded_image} style={{ backgroundImage: `url(${sectionData.section2.images.rounded})` }} />
-    <div className={styles.square_image2} style={{ backgroundImage: `url(${sectionData.section2.images.square2})` }} />
+    <div
+      className={styles.square_image1}
+      style={{ backgroundImage: `url(${sectionData.section2.images.square1})` }}
+    />
+    <div
+      className={styles.rounded_image}
+      style={{ backgroundImage: `url(${sectionData.section2.images.rounded})` }}
+    />
+    <div
+      className={styles.square_image2}
+      style={{ backgroundImage: `url(${sectionData.section2.images.square2})` }}
+    />
   </>
 ));
 
 const Section1 = () => {
   return (
     <section className={cn("", styles.section1)}>
-      <Logo 
+      <Logo
         src={sectionData.section1.logo.src}
         alt={sectionData.section1.logo.alt}
-        className={styles.header_logo} 
+        className={styles.header_logo}
       />
-      <Button className={"absolute right-[3.8rem] top-[3.8rem]"} />
+      <Button
+        className="absolute right-[3.8rem] top-[3.8rem]"
+        variant="circle"
+      />
       <HeaderVideo />
       <LeftTitle />
       <RightTitle />
@@ -194,7 +206,11 @@ const Section2 = () => {
         className={"absolute right-[25.69rem] bottom-[11.88rem]"}
         variant="rounded"
       />
-      <Input className={styles.subscription_input} placeholder="EMAIL ADRESS" variant="newsletter" />
+      <Input
+        className={styles.subscription_input}
+        placeholder="EMAIL ADRESS"
+        variant="newsletter"
+      />
     </section>
   );
 };
@@ -215,5 +231,4 @@ VerticalText.displayName = "VerticalText";
 Section2Title.displayName = "Section2Title";
 Section2Description.displayName = "Section2Description";
 Section2Images.displayName = "Section2Images";
-
 export default SectionOneTwo;
