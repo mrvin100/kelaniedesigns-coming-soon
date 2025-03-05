@@ -160,7 +160,7 @@ const Section6 = () => {
         variant="newsletter"
       />
       <Button
-        className="absolute left-[50%] translate-x-[-50%] bottom-[23.5rem]"
+        className="absolute left-[43%] translate-x-[-50%] bottom-[23.5rem]"
         variant="rounded"
       />
       <Footer />

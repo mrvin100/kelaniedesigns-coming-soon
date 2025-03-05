@@ -36,6 +36,13 @@ const BaseButton = styled.button<{ variant: 'circle' | 'rounded' }>`
   transition: all 0.3s ease;
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &:active {
+    border-color: transparent;
+    transition: border-color 0.1s ease;
+  }
 
   &:hover {
     background-color: #ff3e24;
@@ -97,7 +104,31 @@ export const Button = ({
         duration: 0.1
       }
     }
-  } : {};
+  } : {
+    initial: { opacity: 0, y: 20 },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    whileHover: { 
+      y: -3,
+      transition: {
+        duration: 0.2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    },
+    whileTap: { 
+      y: 0,
+      scale: 0.98,
+      transition: {
+        duration: 0.1
+      }
+    }
+  };
 
   return (
     <BaseButtonContainer 
