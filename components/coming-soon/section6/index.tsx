@@ -15,11 +15,23 @@ const Images = memo(() => (
   </>
 ));
 
-const Section6Subtitle1 = memo(() => (
-  <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle1)}>
-    {sectionData.subtitles.first.text}
-  </h3>
-));
+const Section6Subtitle1 = memo(() => {
+  const words = sectionData.subtitles.first.text.split(" ");
+  const firstLine = words.slice(0, 3).join(" ");
+  const secondLine = words.slice(3, 6).join(" ");
+  const lastLine = words[words.length - 1];
+
+  return (
+    <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle1)}>
+      <span className={styles.first_line}>{firstLine}</span>
+      <span className={styles.line_container}>
+        {secondLine}
+        <span className={styles.red_line} />
+      </span>
+      <span className={styles.last_line}>{lastLine}</span>
+    </h3>
+  );
+});
 
 const Section6Subtitle2 = memo(() => (
   <h3 className={cn(styles.section6_subtitle, styles.section6_subtitle2)}>
