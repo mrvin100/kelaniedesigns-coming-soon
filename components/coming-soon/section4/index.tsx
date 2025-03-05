@@ -58,7 +58,7 @@ const Images = memo(() => (
           ease: [0.25, 0.1, 0.25, 1]
         }
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.3 }}
       style={{ backgroundImage: `url(${sectionData.images.rounded})` }}
     />
     <motion.div 
@@ -73,7 +73,7 @@ const Images = memo(() => (
           ease: "easeOut"
         }
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }}
       style={{ backgroundImage: `url(${sectionData.images.square1})` }}
     />
     <motion.div 
@@ -88,7 +88,7 @@ const Images = memo(() => (
           ease: "easeOut"
         }
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }}
       style={{ backgroundImage: `url(${sectionData.images.square2})` }}
     />
     <motion.div 
@@ -104,7 +104,7 @@ const Images = memo(() => (
           ease: [0.25, 0.1, 0.25, 1]
         }
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.3 }}
       style={{ backgroundImage: `url(${sectionData.images.square3})` }}
     />
   </>
@@ -168,27 +168,74 @@ const Section4Subtitle1 = memo(() => {
   ];
 
   return (
-    <h3 className={cn(styles.section4_subtitle, styles.section4_subtitle1)}>
+    <motion.h3 
+      className={cn(styles.section4_subtitle, styles.section4_subtitle1)}
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: [0.25, 0.1, 0.25, 1]
+        }
+      }}
+      viewport={{ once: true, amount: 0.6 }}
+    >
       {groups.map((line, index) => (
-        <Fragment key={line}>
+        <motion.span
+          key={line}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.6,
+              delay: index * 0.15,
+              ease: "easeOut"
+            }
+          }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
           {line}
           {index < groups.length - 1 && <br />}
-        </Fragment>
+        </motion.span>
       ))}
-    </h3>
+    </motion.h3>
   );
 });
 
 const Section4Subtitle2 = memo(() => (
-  <h3 className={cn(styles.section4_subtitle, styles.section4_subtitle2)}>
+  <motion.h3 
+    className={cn(styles.section4_subtitle, styles.section4_subtitle2)}
+    initial={{ opacity: 0 }}
+    whileInView={{
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+    viewport={{ once: true, amount: 0.6 }}
+  >
     {sectionData.subtitles.second.text}
-  </h3>
+  </motion.h3>
 ));
 
 const Section4Subtitle3 = memo(() => (
-  <h3 className={cn(styles.section4_subtitle, styles.section4_subtitle3)}>
+  <motion.h3 
+    className={cn(styles.section4_subtitle, styles.section4_subtitle3)}
+    initial={{ opacity: 0, transform: 'translateX(30px)' }}
+    whileInView={{
+      opacity: 1,
+      transform: 'translateX(0)',
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+    viewport={{ once: true, amount: 0.8 }}
+  >
     {sectionData.subtitles.third.text}
-  </h3>
+  </motion.h3>
 ));
 
 const Descriptions = memo(() => (
