@@ -22,23 +22,47 @@ const Section3Title = memo(() => (
 const Section3Images = memo(() => (
   <div className={styles.section3_images}>
     <Image
-      width={100}
-      height={100}
+      width={214}
+      height={261}
       src={sectionData.images.firstImage}
       alt="Section 3 Image 1"
       className={cn(styles.section3_image_1)}
     />
     <Image
-      width={100}
-      height={100}
+      width={184}
+      height={174}
       src={sectionData.images.secondImage}
       alt="Section 3 Image 2"
       className={cn(styles.section3_image_2)}
     />
-    <div className={cn(styles.section3_image_3)} />
-    <div className={cn(styles.section3_image_4)} />
-    <div className={cn(styles.section3_image_5)} />
-    <div className={cn(styles.section3_image_6)} />
+    <Image
+      width={146}
+      height={54}
+      src={sectionData.images.thirdImage}
+      alt="Section 3 Image 3"
+      className={cn(styles.section3_image_3)}
+    />
+    <Image
+      width={91}
+      height={88}
+      src={sectionData.images.fourthImage}
+      alt="Section 3 Image 4"
+      className={cn(styles.section3_image_4)}
+    />
+    <Image
+      width={100}
+      height={100}
+      src={sectionData.images.fifthImage}
+      alt="Section 3 Image 5"
+      className={cn(styles.section3_image_5)}
+    />
+    <Image
+      width={100}
+      height={100}
+      src={sectionData.images.sixthImage}
+      alt="Section 3 Image 6"
+      className={cn(styles.section3_image_6)}
+    />
   </div>
 ));
 

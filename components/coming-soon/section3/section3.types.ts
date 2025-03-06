@@ -31,9 +31,9 @@ export const section3Data: Section3Data = {
   images: {
     firstImage: "/section3_image1.svg",
     secondImage: "/section3_image2.svg",
-    thirdImage: "/section3_image3.svg",
-    fourthImage: "/section3_image4.svg",
-    fifthImage: "/section3_image5.svg",
-    sixthImage: "/section3_image6.svg"
+    thirdImage: "/section3_image3.png",
+    fourthImage: "/section3_image4.png",
+    fifthImage: "/section3_image5.png",
+    sixthImage: "/section3_image6.png"
   }
 }; 

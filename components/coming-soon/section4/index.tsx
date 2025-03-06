@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import styles from "./styles.module.css";
 import { Button, SectionBackground } from "../ui";
 import { section4Data as sectionData } from "./section4.types";
-import { memo, Fragment } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 
 const Quote = memo(() => (

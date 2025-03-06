@@ -5,7 +5,7 @@ import { Logo, Button, Input, SectionBackground } from "../ui";
 import Image from "next/image";
 import Link from "next/link";
 import { section6Data as sectionData } from "./section6.types";
-import { memo, Fragment } from "react";
+import { memo } from "react";
 import { motion } from "motion/react";
 
 const Images = memo(() => (
