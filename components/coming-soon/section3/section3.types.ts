@@ -8,6 +8,14 @@ export interface Section3Data {
   button: {
     text: string;
   };
+  images: {
+    firstImage: string;
+    secondImage: string;
+    thirdImage: string;
+    fourthImage: string;
+    fifthImage: string;
+    sixthImage: string;
+  };
 }
 
 export const section3Data: Section3Data = {
@@ -19,5 +27,13 @@ export const section3Data: Section3Data = {
   description: "We create for those who believe in self-expression. Our designs are statements, not just accessories. Embrace fluidity. Every Kelanie piece carries craft, innovation, and soul.",
   button: {
     text: "READ MORE"
+  },
+  images: {
+    firstImage: "/section3_image1.svg",
+    secondImage: "/section3_image2.svg",
+    thirdImage: "/section3_image3.svg",
+    fourthImage: "/section3_image4.svg",
+    fifthImage: "/section3_image5.svg",
+    sixthImage: "/section3_image6.svg"
   }
 }; 

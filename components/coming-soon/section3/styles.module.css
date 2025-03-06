@@ -3,6 +3,7 @@
   height: 52.25rem;
   background: #e3e1e0;
   position: relative;
+  border: 1px solid red;
 }
 
 .section3_description {
@@ -42,13 +43,101 @@
 }
 
 .section3_title::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 10rem;
   height: 2px;
-  background-color: #FF3E24;
+  background-color: #ff3e24;
   right: -3rem;
   transform: translateX(-50%);
   top: 6rem;
   display: block;
+}
+
+.section3_images {
+  position: absolute;
+  right: 11.44rem;
+  bottom: 10.38rem;
+  width: 20.5rem;
+  height: 28.125rem;
+  border: 1px solid red;
+}
+
+.section3_image_1 {
+  width: 13.35994rem;
+  height: 16.337rem;
+  stroke-width: 1px;
+  stroke: #1d1d1b;
+  position: absolute;
+  bottom: 0;
+  left: 3.32rem;
+}
+.section3_image_2 {
+  width: 11.49981rem;
+  height: 10.87788rem;
+  fill: #131313;
+  position: absolute;
+  left: 4.41rem;
+  bottom: 8.24rem;
+}
+.section3_image_3 {
+  width: 9.15475rem;
+  height: 3.35631rem;
+  transform: rotate(-35.296deg);
+  border-radius: 0.5rem;
+  background: url("/section3_image3.svg") lightgray -322.059px -1784.149px /
+    488.085% 1659.9% no-repeat;
+  position: absolute;
+  top: 0;
+  left: 4.39rem;
+}
+
+.section3_image_4 {
+  width: 5.6585rem;
+  height: 5.49975rem;
+  transform: rotate(13.545deg);
+
+  border-radius: 0.5rem;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 62, 36, 0.68) 0%,
+      rgba(255, 62, 36, 0.68) 100%
+    ),
+    url("/section3_image4.svg") lightgray -364.918px -222.229px / 805.405%
+      826.788% no-repeat;
+  background-blend-mode: color-burn, normal;
+  position: absolute;
+  right: 4.58rem;
+  bottom: 3.81rem;
+}
+
+.section3_image_5 {
+  width: 4.12969rem;
+  height: 4.02725rem;
+  transform: rotate(-20.462deg);
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+      0deg,
+      rgba(5, 84, 56, 0.39) 0%,
+      rgba(5, 84, 56, 0.39) 100%
+    ),
+    url("/section3_image5.svg") lightgray -357.907px -251.406px / 805.405%
+      826.788% no-repeat;
+  background-blend-mode: multiply, normal;
+  position: absolute;
+  right: 0;
+  bottom: 9.89rem;
+}
+
+.section3_image_6 {
+  width: 5.15938rem;
+  height: 5.18888rem;
+  flex-shrink: 0;
+  border-radius: 5.18888rem;
+  background: url("/section3_image6.svg") lightgray -31.813px -56.822px /
+    273.489% 410.184% no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 5.99rem;
 }
