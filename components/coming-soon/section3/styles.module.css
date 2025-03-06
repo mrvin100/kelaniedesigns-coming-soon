@@ -38,11 +38,17 @@
   font-weight: 350;
   line-height: 4.0625rem;
   text-transform: uppercase;
+  position: relative;
 }
 
-.section3_heading_bar {
-  font-size: 5rem;
-  line-height: 4.0625rem;
-  display: inline-block;
-  margin-bottom: 2rem;
+.section3_title::after {
+  content: '';
+  position: absolute;
+  width: 10rem;
+  height: 2px;
+  background-color: #FF3E24;
+  right: -3rem;
+  transform: translateX(-50%);
+  top: 6rem;
+  display: block;
 }
