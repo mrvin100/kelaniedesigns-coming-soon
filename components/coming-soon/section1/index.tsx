@@ -3,10 +3,8 @@
 import styles from "./styles.module.css";
 import { Button, Logo, Input, SectionBackground } from "../ui";
 import { cn } from "@/lib/utils";
-import { useQuery } from "@tanstack/react-query";
 import { memo, Suspense } from "react";
 import { motion } from "framer-motion";
-import { fetchSection1Data, useSection1Data } from "@/services/api/section1";
 import {
   TitleProps,
   VideoProps,
@@ -14,7 +12,9 @@ import {
   Section2Props,
   Section2TitleProps,
   Section2DescriptionProps,
-  Section2ImagesProps
+  Section2ImagesProps,
+  Section1Props,
+  SectionOneTwoProps
 } from "@/types/coming-soon";
 
 const HeaderVideo = memo<VideoProps>(({ src, poster }) => (
@@ -289,14 +289,7 @@ const LogoWrapper = memo<LogoProps>(({ src, alt }) => (
   </motion.div>
 ));
 
-const Section1Content = () => {
-  const { data: sectionData, isError } = useSection1Data();
-
-  if (isError) {
-    return <div>Error loading content</div>;
-  }
-  if (!sectionData) return null;
-
+const Section1Content = ({ data }: Section1Props) => {
   return (
     <motion.section
       className={cn("", styles.section1)}
@@ -307,28 +300,28 @@ const Section1Content = () => {
       }}
     >
       <LogoWrapper
-        src={sectionData.section1.logo.src}
-        alt={sectionData.section1.logo.alt}
+        src={data.logo.src}
+        alt={data.logo.alt}
       />
       <Button
         className="absolute right-[3.8rem] top-[3.8rem]"
         variant="circle"
       />
       <HeaderVideo
-        src={sectionData.section1.video.src}
-        poster={sectionData.section1.video.poster}
+        src={data.video.src}
+        poster={data.video.poster}
       />
-      <LeftTitle text={sectionData.section1.title.left.text} />
-      <RightTitle text={sectionData.section1.title.right.text} />
-      <VerticalText text={sectionData.section1.verticalText.text} />
+      <LeftTitle text={data.title.left.text} />
+      <RightTitle text={data.title.right.text} />
+      <VerticalText text={data.verticalText.text} />
     </motion.section>
   );
 };
 
-const Section1 = () => {
+const Section1 = ({ data }: Section1Props) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Section1Content />
+      <Section1Content data={data} />
     </Suspense>
   );
 };
@@ -360,25 +353,11 @@ const Section2 = ({ data }: Section2Props) => {
   );
 };
 
-const SectionOneTwo = () => {
-  const {
-    data: sectionData,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["section1"],
-    queryFn: fetchSection1Data,
-    staleTime: 1000 * 60 * 5, // 5 minutes
-  });
-
-  if (isLoading) return <>Loading...</>;
-  if (error) return <div>Error loading content</div>;
-  if (!sectionData) return null;
-
+const SectionOneTwo = ({ data }: SectionOneTwoProps) => {
   return (
     <SectionBackground className={styles.section_one_two}>
-      <Section1 />
-      <Section2 data={sectionData.section2} />
+      <Section1 data={data.section1} />
+      <Section2 data={data.section2} />
     </SectionBackground>
   );
 };

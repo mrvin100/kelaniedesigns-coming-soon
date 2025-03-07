@@ -132,21 +132,21 @@ export interface StrapiResponse {
   data: {
     id: number;
     attributes: {
-      logo: { 
-        data: { 
-          attributes: { 
+      logo: {
+        data: {
+          attributes: {
             url: string;
             alt: string;
-          } 
-        }
+          };
+        };
       };
       video: {
-        data: { 
-          attributes: { 
+        data: {
+          attributes: {
             url: string;
             poster: string;
-          } 
-        }
+          };
+        };
       };
       title: {
         left: string;
@@ -164,4 +164,17 @@ export interface StrapiResponse {
       };
     };
   };
-} 
+}
+
+export interface ComingSoonPageData {
+  sectionOneTwo: SectionOneTwoData;
+}
+
+// Add these interfaces to types/coming-soon.ts
+export interface Section1Props {
+  data: SectionOneTwoData["section1"];
+}
+
+export interface SectionOneTwoProps {
+  data: SectionOneTwoData;
+}
