@@ -7,49 +7,15 @@ import { useQuery } from "@tanstack/react-query";
 import { memo, Suspense } from "react";
 import { motion } from "framer-motion";
 import { fetchSection1Data, useSection1Data } from "@/services/api/section1";
-// import { Section1Data } from "@/types/coming-soon";
-
-interface TitleProps {
-  text: string;
-}
-
-interface VideoProps {
-  src: string;
-  poster: string;
-}
-
-interface LogoProps {
-  src: string;
-  alt: string;
-}
-
-interface Section2Props {
-  data: {
-    title: { text: string };
-    description: string;
-    images: {
-      square1: string;
-      rounded: string;
-      square2: string;
-    };
-  };
-}
-
-interface Section2TitleProps {
-  title: { text: string };
-}
-
-interface Section2DescriptionProps {
-  description: string;
-}
-
-interface Section2ImagesProps {
-  images: {
-    square1: string;
-    rounded: string;
-    square2: string;
-  };
-}
+import {
+  TitleProps,
+  VideoProps,
+  LogoProps,
+  Section2Props,
+  Section2TitleProps,
+  Section2DescriptionProps,
+  Section2ImagesProps
+} from "@/types/coming-soon";
 
 const HeaderVideo = memo<VideoProps>(({ src, poster }) => (
   <motion.div
@@ -380,6 +346,7 @@ const Section2 = ({ data }: Section2Props) => {
     >
       <Section2Images images={data.images} />
       <Section2Title title={data.title} />
+      <Section2Description description={data.description} />
       <Button
         className={"absolute right-[25.69rem] bottom-[11.88rem]"}
         variant="rounded"

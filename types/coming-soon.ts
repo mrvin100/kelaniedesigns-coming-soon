@@ -1,41 +1,66 @@
-// Types communs
-interface Title {
+// Base Components Types
+export interface BaseProps {
+  className?: string;
+}
+
+export interface TitleProps extends BaseProps {
   text: string;
 }
 
-interface Logo {
-  src: string;
-  alt: string;
-}
-
-interface Video {
+export interface VideoProps extends BaseProps {
   src: string;
   poster: string;
 }
 
-// interface Image {
-//   src: string;
-//   alt?: string;
-// }
+export interface LogoProps extends BaseProps {
+  src: string;
+  alt: string;
+}
 
-// Section 1 & 2
+export interface ImageProps extends BaseProps {
+  src: string;
+  alt?: string;
+}
+
+// Section 1 & 2 Component Types
+export interface Section2Props {
+  data: Section2Data;
+}
+
+export interface Section2TitleProps {
+  title: { text: string };
+}
+
+export interface Section2DescriptionProps {
+  description: string;
+}
+
+export interface Section2ImagesProps {
+  images: {
+    square1: string;
+    rounded: string;
+    square2: string;
+  };
+}
+
+// Data Structure Types
 export interface SectionOneTwoData {
   section1: Section1Data;
   section2: Section2Data;
 }
 
 export interface Section1Data {
-  logo: Logo;
-  video: Video;
+  logo: LogoProps;
+  video: VideoProps;
   title: {
-    left: Title;
-    right: Title;
+    left: TitleProps;
+    right: TitleProps;
   };
-  verticalText: Title;
+  verticalText: TitleProps;
 }
 
 export interface Section2Data {
-  title: Title;
+  title: TitleProps;
   description: string;
   images: {
     square1: string;
@@ -72,8 +97,8 @@ export interface Section6Data {
     secondLine: string;
   };
   subtitles: {
-    first: Title;
-    second: Title;
+    first: TitleProps;
+    second: TitleProps;
   };
   descriptions: {
     first: string;
@@ -85,7 +110,7 @@ export interface Section6Data {
     square3: string;
   };
   footer: {
-    logo: Logo;
+    logo: LogoProps;
     socials: Array<{
       src: string;
       href: string;
@@ -100,4 +125,43 @@ export interface QueryConfig {
   cacheTime?: number;
   retry?: number | boolean;
   refetchOnWindowFocus?: boolean;
+}
+
+// API Types
+export interface StrapiResponse {
+  data: {
+    id: number;
+    attributes: {
+      logo: { 
+        data: { 
+          attributes: { 
+            url: string;
+            alt: string;
+          } 
+        }
+      };
+      video: {
+        data: { 
+          attributes: { 
+            url: string;
+            poster: string;
+          } 
+        }
+      };
+      title: {
+        left: string;
+        right: string;
+      };
+      verticalText: string;
+      section2: {
+        title: string;
+        description: string;
+        images: {
+          square1: { data: { attributes: { url: string } } };
+          rounded: { data: { attributes: { url: string } } };
+          square2: { data: { attributes: { url: string } } };
+        };
+      };
+    };
+  };
 } 
