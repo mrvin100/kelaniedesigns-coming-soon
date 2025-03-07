@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { Providers } from "@/providers/providers";
 
 export const metadata: Metadata = {
   title: "Kelanie Designs",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Toaster richColors closeButton position="top-right" />
       </body>
     </html>

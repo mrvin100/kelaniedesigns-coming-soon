@@ -7,6 +7,7 @@ import Link from "next/link";
 import { section6Data as sectionData } from "./section6.types";
 import { memo } from "react";
 import { motion } from "motion/react";
+// import { Section6Data } from "@/types/coming-soon";
 
 const Images = memo(() => (
   <>

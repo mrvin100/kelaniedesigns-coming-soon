@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "../ui";
 import styles from "./styles.module.css";
+// import { Section3Data } from "@/types/coming-soon";
 import { section3Data as sectionData } from "./section3.types";
 import { memo } from "react";
 import Image from "next/image";
